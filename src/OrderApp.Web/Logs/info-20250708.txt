@@ -1,0 +1,4 @@
+[12:12:19 INF] Starting web host
+[12:12:19 INF] Options were configured
+[12:12:19 INF] Infrastructure services registered
+[12:12:19 INF] Mediatr and Email Sender services registered

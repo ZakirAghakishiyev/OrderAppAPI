@@ -1,0 +1,17 @@
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\bin\Debug\net9.0\OrderApp.UseCases.deps.json
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\bin\Debug\net9.0\OrderApp.UseCases.dll
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\bin\Debug\net9.0\OrderApp.UseCases.pdb
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\bin\Debug\net9.0\OrderApp.Core.dll
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\bin\Debug\net9.0\OrderApp.SharedKernel.dll
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\bin\Debug\net9.0\OrderApp.Core.pdb
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\bin\Debug\net9.0\OrderApp.SharedKernel.pdb
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\obj\Debug\net9.0\OrderApp.UseCases.csproj.AssemblyReference.cache
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\obj\Debug\net9.0\OrderApp.UseCases.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\obj\Debug\net9.0\OrderApp.UseCases.AssemblyInfoInputs.cache
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\obj\Debug\net9.0\OrderApp.UseCases.AssemblyInfo.cs
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\obj\Debug\net9.0\OrderApp.UseCases.csproj.CoreCompileInputs.cache
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\obj\Debug\net9.0\OrderApp.FE888220.Up2Date
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\obj\Debug\net9.0\OrderApp.UseCases.dll
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\obj\Debug\net9.0\refint\OrderApp.UseCases.dll
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\obj\Debug\net9.0\OrderApp.UseCases.pdb
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.UseCases\obj\Debug\net9.0\ref\OrderApp.UseCases.dll

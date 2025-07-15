@@ -1,0 +1,305 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.Core\\OrderApp.Core.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.Core\\OrderApp.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.Core\\OrderApp.Core.csproj",
+        "projectName": "OrderApp.Core",
+        "projectPath": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.Core\\OrderApp.Core.csproj",
+        "packagesPath": "C:\\Users\\zakir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\NuGet.Config",
+          "C:\\Users\\zakir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "c:\\LocalNuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\OrderApp.SharedKernel.csproj": {
+                "projectPath": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\OrderApp.SharedKernel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Ardalis.GuardClauses": {
+              "target": "Package",
+              "version": "[5.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Ardalis.Result": {
+              "target": "Package",
+              "version": "[10.1.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Ardalis.SharedKernel": {
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "versionCentrallyManaged": true
+            },
+            "Ardalis.SmartEnum": {
+              "target": "Package",
+              "version": "[8.2.0, )",
+              "versionCentrallyManaged": true
+            },
+            "Ardalis.Specification": {
+              "target": "Package",
+              "version": "[8.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )",
+              "versionCentrallyManaged": true
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.0, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "Ardalis.GuardClauses": "5.0.0",
+            "Ardalis.HttpClientTestExtensions": "4.2.0",
+            "Ardalis.ListStartupServices": "1.1.4",
+            "Ardalis.Result": "10.1.0",
+            "Ardalis.Result.AspNetCore": "10.1.0",
+            "Ardalis.SharedKernel": "2.1.1",
+            "Ardalis.SmartEnum": "8.2.0",
+            "Ardalis.Specification": "8.0.0",
+            "Ardalis.Specification.EntityFrameworkCore": "8.0.0",
+            "Autofac.Extensions.DependencyInjection": "10.0.0",
+            "AutoMapper": "12.0.1",
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+            "AutoWrapper": "1.1.0",
+            "AutoWrapper.Core": "4.5.0",
+            "Azure.Identity": "1.13.1",
+            "Castle.Core": "5.2.1",
+            "coverlet.collector": "6.0.2",
+            "FastEndpoints": "5.32.0",
+            "FastEndpoints.ApiExplorer": "2.2.0",
+            "FastEndpoints.Swagger": "5.31.0",
+            "FastEndpoints.Swagger.Swashbuckle": "2.2.0",
+            "FluentValidation.AspNetCore": "11.3.1",
+            "MailKit": "4.9.0",
+            "MediatR": "12.4.1",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": "9.0.7",
+            "Microsoft.AspNetCore.Http.Abstractions": "2.3.0",
+            "Microsoft.AspNetCore.Mvc.Testing": "9.0.0",
+            "Microsoft.Build.CentralPackageVersions": "2.0.79",
+            "Microsoft.EntityFrameworkCore": "9.0.6",
+            "Microsoft.EntityFrameworkCore.Design": "9.0.0",
+            "Microsoft.EntityFrameworkCore.InMemory": "9.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "9.0.0",
+            "Microsoft.EntityFrameworkCore.Sqlite": "9.0.0",
+            "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
+            "Microsoft.EntityFrameworkCore.Tools": "9.0.0",
+            "Microsoft.Extensions.Configuration": "9.0.0",
+            "Microsoft.Extensions.Logging": "9.0.0",
+            "Microsoft.Extensions.Logging.Abstractions": "9.0.0",
+            "Microsoft.Extensions.Options.ConfigurationExtensions": "9.0.0",
+            "Microsoft.NET.Test.Sdk": "17.12.0",
+            "NSubstitute": "5.3.0",
+            "ReportGenerator": "5.4.1",
+            "Serilog": "4.3.0",
+            "Serilog.AspNetCore": "9.0.0",
+            "Serilog.Sinks.Console": "6.0.0",
+            "Serilog.Sinks.File": "7.0.0",
+            "Shouldly": "4.3.0",
+            "SQLite": "3.13.0",
+            "Swashbuckle.AspNetCore": "6.5.0",
+            "Swashbuckle.AspNetCore.Annotations": "6.5.0",
+            "xunit": "2.9.2",
+            "xunit.runner.visualstudio": "3.0.0-pre.49"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\OrderApp.SharedKernel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\OrderApp.SharedKernel.csproj",
+        "projectName": "OrderApp.SharedKernel",
+        "projectPath": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\OrderApp.SharedKernel.csproj",
+        "packagesPath": "C:\\Users\\zakir\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\obj\\",
+        "projectStyle": "PackageReference",
+        "centralPackageVersionsManagementEnabled": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\NuGet.Config",
+          "C:\\Users\\zakir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "c:\\LocalNuget": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Ardalis.Specification": {
+              "target": "Package",
+              "version": "[8.0.0, )",
+              "versionCentrallyManaged": true
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )",
+              "versionCentrallyManaged": true
+            }
+          },
+          "centralPackageVersions": {
+            "Ardalis.GuardClauses": "5.0.0",
+            "Ardalis.HttpClientTestExtensions": "4.2.0",
+            "Ardalis.ListStartupServices": "1.1.4",
+            "Ardalis.Result": "10.1.0",
+            "Ardalis.Result.AspNetCore": "10.1.0",
+            "Ardalis.SharedKernel": "2.1.1",
+            "Ardalis.SmartEnum": "8.2.0",
+            "Ardalis.Specification": "8.0.0",
+            "Ardalis.Specification.EntityFrameworkCore": "8.0.0",
+            "Autofac.Extensions.DependencyInjection": "10.0.0",
+            "AutoMapper": "12.0.1",
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+            "AutoWrapper": "1.1.0",
+            "AutoWrapper.Core": "4.5.0",
+            "Azure.Identity": "1.13.1",
+            "Castle.Core": "5.2.1",
+            "coverlet.collector": "6.0.2",
+            "FastEndpoints": "5.32.0",
+            "FastEndpoints.ApiExplorer": "2.2.0",
+            "FastEndpoints.Swagger": "5.31.0",
+            "FastEndpoints.Swagger.Swashbuckle": "2.2.0",
+            "FluentValidation.AspNetCore": "11.3.1",
+            "MailKit": "4.9.0",
+            "MediatR": "12.4.1",
+            "Microsoft.AspNetCore.Authentication.JwtBearer": "9.0.7",
+            "Microsoft.AspNetCore.Http.Abstractions": "2.3.0",
+            "Microsoft.AspNetCore.Mvc.Testing": "9.0.0",
+            "Microsoft.Build.CentralPackageVersions": "2.0.79",
+            "Microsoft.EntityFrameworkCore": "9.0.6",
+            "Microsoft.EntityFrameworkCore.Design": "9.0.0",
+            "Microsoft.EntityFrameworkCore.InMemory": "9.0.0",
+            "Microsoft.EntityFrameworkCore.Relational": "9.0.0",
+            "Microsoft.EntityFrameworkCore.Sqlite": "9.0.0",
+            "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
+            "Microsoft.EntityFrameworkCore.Tools": "9.0.0",
+            "Microsoft.Extensions.Configuration": "9.0.0",
+            "Microsoft.Extensions.Logging": "9.0.0",
+            "Microsoft.Extensions.Logging.Abstractions": "9.0.0",
+            "Microsoft.Extensions.Options.ConfigurationExtensions": "9.0.0",
+            "Microsoft.NET.Test.Sdk": "17.12.0",
+            "NSubstitute": "5.3.0",
+            "ReportGenerator": "5.4.1",
+            "Serilog": "4.3.0",
+            "Serilog.AspNetCore": "9.0.0",
+            "Serilog.Sinks.Console": "6.0.0",
+            "Serilog.Sinks.File": "7.0.0",
+            "Shouldly": "4.3.0",
+            "SQLite": "3.13.0",
+            "Swashbuckle.AspNetCore": "6.5.0",
+            "Swashbuckle.AspNetCore.Annotations": "6.5.0",
+            "xunit": "2.9.2",
+            "xunit.runner.visualstudio": "3.0.0-pre.49"
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

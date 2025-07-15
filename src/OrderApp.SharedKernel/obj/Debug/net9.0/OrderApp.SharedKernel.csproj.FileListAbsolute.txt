@@ -1,0 +1,12 @@
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.SharedKernel\bin\Debug\net9.0\OrderApp.SharedKernel.deps.json
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.SharedKernel\bin\Debug\net9.0\OrderApp.SharedKernel.dll
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.SharedKernel\bin\Debug\net9.0\OrderApp.SharedKernel.pdb
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.csproj.AssemblyReference.cache
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.AssemblyInfoInputs.cache
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.AssemblyInfo.cs
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.csproj.CoreCompileInputs.cache
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.dll
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\refint\OrderApp.SharedKernel.dll
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.pdb
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\ref\OrderApp.SharedKernel.dll

@@ -1,0 +1,579 @@
+2025-07-15 09:15:25.717 +04:00 [INF] Starting web host
+2025-07-15 09:15:29.241 +04:00 [INF] Options were configured
+2025-07-15 09:15:29.273 +04:00 [INF] Infrastructure services registered
+2025-07-15 09:15:29.339 +04:00 [INF] Mediatr and Email Sender services registered
+2025-07-15 09:15:31.774 +04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-07-15 09:15:32.503 +04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-07-15 09:15:35.289 +04:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-07-15 09:15:35.867 +04:00 [INF] Registered 29 endpoints in 6,457 milliseconds.
+2025-07-15 09:15:37.887 +04:00 [DBG] The property 'PhoneNumber.ContributorId' was created in shadow state because there are no eligible CLR members with a matching name.
+2025-07-15 09:15:37.895 +04:00 [WRN] The foreign key property 'UserRole.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-07-15 09:15:37.995 +04:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-15 09:15:38.312 +04:00 [DBG] Entity Framework Core 9.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2025-07-15 09:15:39.052 +04:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Any()'
+2025-07-15 09:15:42.221 +04:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<bool>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u)) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u), 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            bool? value1;
+            value1 = dataReader.IsDBNull(0) ? default(bool?) : (bool?)dataReader.GetBoolean(0);
+            return (bool)value1;
+        }, 
+        contextType: OrderApp.Infrastructure.Data.AppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-07-15 09:15:42.846 +04:00 [DBG] Creating DbConnection.
+2025-07-15 09:15:43.159 +04:00 [DBG] Created DbConnection. (274ms).
+2025-07-15 09:15:43.199 +04:00 [DBG] Opening connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-07-15 09:15:43.753 +04:00 [DBG] Opened connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-07-15 09:15:43.761 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-15 09:15:43.774 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (9ms).
+2025-07-15 09:15:43.777 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (18ms).
+2025-07-15 09:15:43.787 +04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-07-15 09:15:43.895 +04:00 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-07-15 09:15:43.927 +04:00 [DBG] Closing data reader to 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-07-15 09:15:43.937 +04:00 [DBG] A data reader for 'OrderApp' on server 'DESKTOP-ZAKIR' is being disposed after spending 34ms reading results.
+2025-07-15 09:15:43.941 +04:00 [DBG] Closing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-07-15 09:15:43.951 +04:00 [DBG] Closed connection to database 'OrderApp' on server 'DESKTOP-ZAKIR' (9ms).
+2025-07-15 09:15:43.953 +04:00 [DBG] 'AppDbContext' disposed.
+2025-07-15 09:15:43.956 +04:00 [DBG] Disposing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-07-15 09:15:43.958 +04:00 [DBG] Disposed connection to database '' on server '' (1ms).
+2025-07-15 09:15:43.961 +04:00 [DBG] Hosting starting
+2025-07-15 09:15:44.017 +04:00 [INF] User profile is available. Using 'C:\Users\zakir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-15 09:15:44.079 +04:00 [DBG] Reading data from file 'C:\Users\zakir\AppData\Local\ASP.NET\DataProtection-Keys\key-d76fcede-8a6f-46d5-9032-13cac50778bc.xml'.
+2025-07-15 09:15:44.092 +04:00 [DBG] Found key {d76fcede-8a6f-46d5-9032-13cac50778bc}.
+2025-07-15 09:15:44.120 +04:00 [DBG] Considering key {d76fcede-8a6f-46d5-9032-13cac50778bc} with expiration date 2025-08-04 16:06:59Z as default key.
+2025-07-15 09:15:44.126 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-07-15 09:15:44.130 +04:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-07-15 09:15:44.134 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-07-15 09:15:44.140 +04:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-07-15 09:15:44.142 +04:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-07-15 09:15:44.145 +04:00 [DBG] Using key {d76fcede-8a6f-46d5-9032-13cac50778bc} as the default key.
+2025-07-15 09:15:44.148 +04:00 [DBG] Key ring with default key {d76fcede-8a6f-46d5-9032-13cac50778bc} was loaded during application startup.
+2025-07-15 09:15:44.396 +04:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-07-15 09:15:44.398 +04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-07-15 09:15:44.515 +04:00 [DBG] No listening endpoints were configured. Binding to http://localhost:5000 by default.
+2025-07-15 09:15:44.519 +04:00 [INF] Now listening on: http://localhost:5000
+2025-07-15 09:15:44.520 +04:00 [DBG] Loaded hosting startup assembly OrderApp.Web
+2025-07-15 09:15:44.521 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-15 09:15:44.521 +04:00 [INF] Hosting environment: Development
+2025-07-15 09:15:44.522 +04:00 [INF] Content root path: C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp
+2025-07-15 09:15:44.522 +04:00 [DBG] Hosting started
+2025-07-15 09:15:45.018 +04:00 [DBG] Connection id "0HNE3BQJDLJHA" accepted.
+2025-07-15 09:15:45.019 +04:00 [DBG] Connection id "0HNE3BQJDLJHA" started.
+2025-07-15 09:15:45.020 +04:00 [DBG] Connection id "0HNE3BQJDLJHB" accepted.
+2025-07-15 09:15:45.020 +04:00 [DBG] Connection id "0HNE3BQJDLJHB" started.
+2025-07-15 09:15:45.201 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-15 09:15:45.373 +04:00 [DBG] No candidates found for the request path '/'
+2025-07-15 09:15:45.374 +04:00 [DBG] Request did not match any endpoints
+2025-07-15 09:17:57.692 +04:00 [INF] Starting web host
+2025-07-15 09:17:58.938 +04:00 [INF] Options were configured
+2025-07-15 09:17:58.973 +04:00 [INF] Infrastructure services registered
+2025-07-15 09:17:59.070 +04:00 [INF] Mediatr and Email Sender services registered
+2025-07-15 09:18:00.106 +04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-07-15 09:18:00.172 +04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-07-15 09:18:00.582 +04:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-07-15 09:18:00.867 +04:00 [INF] Registered 29 endpoints in 1,635 milliseconds.
+2025-07-15 09:18:02.190 +04:00 [DBG] The property 'PhoneNumber.ContributorId' was created in shadow state because there are no eligible CLR members with a matching name.
+2025-07-15 09:18:02.198 +04:00 [WRN] The foreign key property 'UserRole.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-07-15 09:18:02.252 +04:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-15 09:18:02.362 +04:00 [DBG] Entity Framework Core 9.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2025-07-15 09:18:02.449 +04:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Any()'
+2025-07-15 09:18:02.748 +04:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<bool>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u)) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u), 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            bool? value1;
+            value1 = dataReader.IsDBNull(0) ? default(bool?) : (bool?)dataReader.GetBoolean(0);
+            return (bool)value1;
+        }, 
+        contextType: OrderApp.Infrastructure.Data.AppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-07-15 09:18:02.813 +04:00 [DBG] Creating DbConnection.
+2025-07-15 09:18:02.844 +04:00 [DBG] Created DbConnection. (29ms).
+2025-07-15 09:18:02.848 +04:00 [DBG] Opening connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-07-15 09:18:03.431 +04:00 [DBG] Opened connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-07-15 09:18:03.441 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-15 09:18:03.459 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (11ms).
+2025-07-15 09:18:03.464 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (24ms).
+2025-07-15 09:18:03.482 +04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-07-15 09:18:03.814 +04:00 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-07-15 09:18:03.855 +04:00 [DBG] Closing data reader to 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-07-15 09:18:03.866 +04:00 [DBG] A data reader for 'OrderApp' on server 'DESKTOP-ZAKIR' is being disposed after spending 43ms reading results.
+2025-07-15 09:18:03.870 +04:00 [DBG] Closing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-07-15 09:18:03.879 +04:00 [DBG] Closed connection to database 'OrderApp' on server 'DESKTOP-ZAKIR' (8ms).
+2025-07-15 09:18:03.880 +04:00 [DBG] 'AppDbContext' disposed.
+2025-07-15 09:18:03.883 +04:00 [DBG] Disposing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-07-15 09:18:03.885 +04:00 [DBG] Disposed connection to database '' on server '' (1ms).
+2025-07-15 09:18:03.887 +04:00 [DBG] Hosting starting
+2025-07-15 09:18:03.933 +04:00 [INF] User profile is available. Using 'C:\Users\zakir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-15 09:18:03.969 +04:00 [DBG] Reading data from file 'C:\Users\zakir\AppData\Local\ASP.NET\DataProtection-Keys\key-d76fcede-8a6f-46d5-9032-13cac50778bc.xml'.
+2025-07-15 09:18:03.979 +04:00 [DBG] Found key {d76fcede-8a6f-46d5-9032-13cac50778bc}.
+2025-07-15 09:18:04.000 +04:00 [DBG] Considering key {d76fcede-8a6f-46d5-9032-13cac50778bc} with expiration date 2025-08-04 16:06:59Z as default key.
+2025-07-15 09:18:04.005 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-07-15 09:18:04.006 +04:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-07-15 09:18:04.009 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-07-15 09:18:04.013 +04:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-07-15 09:18:04.015 +04:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-07-15 09:18:04.017 +04:00 [DBG] Using key {d76fcede-8a6f-46d5-9032-13cac50778bc} as the default key.
+2025-07-15 09:18:04.019 +04:00 [DBG] Key ring with default key {d76fcede-8a6f-46d5-9032-13cac50778bc} was loaded during application startup.
+2025-07-15 09:18:04.159 +04:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-07-15 09:18:04.160 +04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-07-15 09:18:04.216 +04:00 [DBG] No listening endpoints were configured. Binding to http://localhost:5000 by default.
+2025-07-15 09:18:04.219 +04:00 [INF] Now listening on: http://localhost:5000
+2025-07-15 09:18:04.219 +04:00 [DBG] Loaded hosting startup assembly OrderApp.Web
+2025-07-15 09:18:04.220 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-15 09:18:04.220 +04:00 [INF] Hosting environment: Development
+2025-07-15 09:18:04.220 +04:00 [INF] Content root path: C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp
+2025-07-15 09:18:04.220 +04:00 [DBG] Hosting started
+2025-07-15 09:18:04.560 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" accepted.
+2025-07-15 09:18:04.623 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" started.
+2025-07-15 09:18:04.623 +04:00 [DBG] Connection id "0HNE3BRT0EE30" accepted.
+2025-07-15 09:18:04.624 +04:00 [DBG] Connection id "0HNE3BRT0EE30" started.
+2025-07-15 09:18:04.764 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-07-15 09:18:04.850 +04:00 [DBG] No candidates found for the request path '/'
+2025-07-15 09:18:04.851 +04:00 [DBG] Request did not match any endpoints
+2025-07-15 09:18:04.969 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-15 09:18:05.001 +04:00 [DBG] The request path  does not match the path filter
+2025-07-15 09:18:05.003 +04:00 [WRN] Failed to determine the https port for redirect.
+2025-07-15 09:18:05.406 +04:00 [INF] Source:[::1] Request: GET http localhost:5000/   Responded with [404] in 395ms
+2025-07-15 09:18:05.406 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:18:05.419 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 404 157 application/json 660.1571ms
+2025-07-15 09:18:05.430 +04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/, Response status code: 404
+2025-07-15 09:18:06.447 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-07-15 09:18:06.451 +04:00 [DBG] No candidates found for the request path '/favicon.ico'
+2025-07-15 09:18:06.451 +04:00 [DBG] Request did not match any endpoints
+2025-07-15 09:18:06.453 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-15 09:18:06.453 +04:00 [DBG] The request path  does not match the path filter
+2025-07-15 09:18:06.455 +04:00 [INF] Source:[::1] Request: GET http localhost:5000/favicon.ico   Responded with [404] in 2ms
+2025-07-15 09:18:06.456 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:18:06.457 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 404 157 application/json 9.0963ms
+2025-07-15 09:18:06.457 +04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/favicon.ico, Response status code: 404
+2025-07-15 09:18:36.129 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - null null
+2025-07-15 09:18:36.134 +04:00 [DBG] No candidates found for the request path '/swagger'
+2025-07-15 09:18:36.135 +04:00 [DBG] Request did not match any endpoints
+2025-07-15 09:18:36.136 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-15 09:18:36.152 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:18:36.152 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - 302 0 null 23.5524ms
+2025-07-15 09:18:36.180 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2025-07-15 09:18:36.181 +04:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-07-15 09:18:36.182 +04:00 [DBG] Request did not match any endpoints
+2025-07-15 09:18:36.183 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-15 09:18:36.243 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:18:36.243 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html; charset=utf-8 62.7408ms
+2025-07-15 09:18:36.779 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2025-07-15 09:18:36.780 +04:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-07-15 09:18:36.780 +04:00 [DBG] Request did not match any endpoints
+2025-07-15 09:18:36.781 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-15 09:18:36.806 +04:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-07-15 09:18:36.852 +04:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-07-15 09:18:39.128 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:18:39.128 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 2348.8418ms
+2025-07-15 09:18:46.143 +04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/Roles - application/json 22
+2025-07-15 09:18:46.148 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:18:46.149 +04:00 [DBG] Request matched endpoint 'HTTP: POST /Roles'
+2025-07-15 09:18:46.168 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:18:46.178 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:18:46.189 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:18:46.190 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:18:46.190 +04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/Roles - 401 0 null 47.1763ms
+2025-07-15 09:18:46.195 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:00000006": started reading request body.
+2025-07-15 09:18:46.197 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:00000006": done reading request body.
+2025-07-15 09:19:30.803 +04:00 [DBG] Connection id "0HNE3BRT0EE30" received FIN.
+2025-07-15 09:19:30.892 +04:00 [DBG] Connection id "0HNE3BRT0EE30" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-15 09:19:30.896 +04:00 [DBG] Connection id "0HNE3BRT0EE30" disconnecting.
+2025-07-15 09:19:30.902 +04:00 [DBG] Connection id "0HNE3BRT0EE30" stopped.
+2025-07-15 09:19:37.353 +04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/Roles - application/json 22
+2025-07-15 09:19:37.354 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:19:37.355 +04:00 [DBG] Request matched endpoint 'HTTP: POST /Roles'
+2025-07-15 09:19:37.358 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:19:37.360 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:19:37.361 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:19:37.361 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:19:37.362 +04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/Roles - 401 0 null 8.575ms
+2025-07-15 09:19:37.367 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:00000007": started reading request body.
+2025-07-15 09:19:37.367 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:00000007": done reading request body.
+2025-07-15 09:19:52.590 +04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/Roles - application/json 29
+2025-07-15 09:19:52.592 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:19:52.592 +04:00 [DBG] Request matched endpoint 'HTTP: POST /Roles'
+2025-07-15 09:19:52.593 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:19:52.593 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:19:52.595 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:19:52.596 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:19:52.597 +04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/Roles - 401 0 null 5.9998ms
+2025-07-15 09:19:52.597 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:00000008": started reading request body.
+2025-07-15 09:19:52.597 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:00000008": done reading request body.
+2025-07-15 09:20:39.164 +04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/Roles - application/json 29
+2025-07-15 09:20:39.165 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:20:39.166 +04:00 [DBG] Request matched endpoint 'HTTP: POST /Roles'
+2025-07-15 09:20:39.167 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:20:39.167 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:20:39.168 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:20:39.168 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:20:39.169 +04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/Roles - 401 0 null 5.2919ms
+2025-07-15 09:20:39.170 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:00000009": started reading request body.
+2025-07-15 09:20:39.170 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:00000009": done reading request body.
+2025-07-15 09:20:44.346 +04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/Roles - application/json 21
+2025-07-15 09:20:44.346 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:20:44.347 +04:00 [DBG] Request matched endpoint 'HTTP: POST /Roles'
+2025-07-15 09:20:44.347 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:20:44.348 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:20:44.349 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:20:44.349 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:20:44.350 +04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/Roles - 401 0 null 4.0353ms
+2025-07-15 09:20:44.352 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:0000000A": started reading request body.
+2025-07-15 09:20:44.352 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:0000000A": done reading request body.
+2025-07-15 09:20:47.114 +04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/Roles - application/json 21
+2025-07-15 09:20:47.114 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:20:47.114 +04:00 [DBG] Request matched endpoint 'HTTP: POST /Roles'
+2025-07-15 09:20:47.116 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:20:47.116 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:20:47.117 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:20:47.117 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:20:47.117 +04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/Roles - 401 0 null 3.4025ms
+2025-07-15 09:20:47.119 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:0000000B": started reading request body.
+2025-07-15 09:20:47.120 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:0000000B": done reading request body.
+2025-07-15 09:21:43.411 +04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/Roles - application/json 21
+2025-07-15 09:21:43.412 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:21:43.412 +04:00 [DBG] Request matched endpoint 'HTTP: POST /Roles'
+2025-07-15 09:21:43.414 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:21:43.415 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:21:43.417 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:21:43.417 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:21:43.418 +04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/Roles - 401 0 null 6.0584ms
+2025-07-15 09:21:43.419 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:0000000C": started reading request body.
+2025-07-15 09:21:43.419 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:0000000C": done reading request body.
+2025-07-15 09:21:44.682 +04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/Roles - application/json 21
+2025-07-15 09:21:44.682 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:21:44.682 +04:00 [DBG] Request matched endpoint 'HTTP: POST /Roles'
+2025-07-15 09:21:44.683 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:21:44.683 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:21:44.683 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:21:44.683 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:21:44.683 +04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/Roles - 401 0 null 1.4703ms
+2025-07-15 09:21:44.684 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:0000000D": started reading request body.
+2025-07-15 09:21:44.684 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:0000000D": done reading request body.
+2025-07-15 09:21:51.719 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Roles - null null
+2025-07-15 09:21:51.719 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:21:51.721 +04:00 [DBG] Request matched endpoint 'HTTP: GET /Roles'
+2025-07-15 09:21:51.727 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:21:51.727 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:21:51.728 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:21:51.728 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:21:51.728 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Roles - 401 0 null 9.2862ms
+2025-07-15 09:21:56.586 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Roles - null null
+2025-07-15 09:21:56.586 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:21:56.587 +04:00 [DBG] Request matched endpoint 'HTTP: GET /Roles'
+2025-07-15 09:21:56.587 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:21:56.588 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:21:56.590 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:21:56.590 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:21:56.591 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Roles - 401 0 null 4.9721ms
+2025-07-15 09:22:18.662 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Roles - null null
+2025-07-15 09:22:18.663 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:22:18.663 +04:00 [DBG] Request matched endpoint 'HTTP: GET /Roles'
+2025-07-15 09:22:18.664 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:22:18.664 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:22:18.665 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:22:18.665 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:22:18.666 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Roles - 401 0 null 4.0514ms
+2025-07-15 09:22:20.648 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Roles - null null
+2025-07-15 09:22:20.648 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:22:20.648 +04:00 [DBG] Request matched endpoint 'HTTP: GET /Roles'
+2025-07-15 09:22:20.648 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:22:20.648 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:22:20.649 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:22:20.649 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:22:20.649 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Roles - 401 0 null 1.3509ms
+2025-07-15 09:22:29.568 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Roles - null null
+2025-07-15 09:22:29.568 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:22:29.568 +04:00 [DBG] Request matched endpoint 'HTTP: GET /Roles'
+2025-07-15 09:22:29.569 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:22:29.569 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:22:29.569 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:22:29.570 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:22:29.570 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Roles - 401 0 null 2.2859ms
+2025-07-15 09:22:43.155 +04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5000/auth/login - application/json 47
+2025-07-15 09:22:43.161 +04:00 [DBG] 1 candidate(s) found for the request path '/auth/login'
+2025-07-15 09:22:43.161 +04:00 [DBG] Request matched endpoint 'HTTP: POST /auth/login'
+2025-07-15 09:22:43.162 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-15 09:22:43.227 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:00000013": started reading request body.
+2025-07-15 09:22:43.228 +04:00 [DBG] Connection id "0HNE3BRT0EE2V", Request id "0HNE3BRT0EE2V:00000013": done reading request body.
+2025-07-15 09:22:43.248 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-07-15 09:22:43.258 +04:00 [INF] Executing endpoint 'HTTP: POST /auth/login'
+2025-07-15 09:22:44.020 +04:00 [DBG] Entity Framework Core 9.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2025-07-15 09:22:44.104 +04:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Where(u => u.Name == __name_0 && u.Password == __password_1)
+    .FirstOrDefault()'
+2025-07-15 09:22:44.434 +04:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<User>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.Name (string) Required, 1], [Property: User.Password (string) Required, 2] }
+            SELECT TOP(1) u.Id, u.Name, u.Password
+            FROM Users AS u
+            WHERE (u.Name == @__name_0) && (u.Password == @__password_1)) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.Name (string) Required, 1], [Property: User.Password (string) Required, 2] }
+            SELECT TOP(1) u.Id, u.Name, u.Password
+            FROM Users AS u
+            WHERE (u.Name == @__name_0) && (u.Password == @__password_1), 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            User entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                User instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(User);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: User.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (User)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User")]: 
+                            {
+                                return 
+                                {
+                                    User instance;
+                                    instance = new User();
+                                    instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                    instance.<Name>k__BackingField = dataReader.GetString(1);
+                                    instance.<Password>k__BackingField = dataReader.GetString(2);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(User)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: OrderApp.Infrastructure.Data.AppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-07-15 09:22:44.521 +04:00 [DBG] Creating DbConnection.
+2025-07-15 09:22:44.524 +04:00 [DBG] Created DbConnection. (3ms).
+2025-07-15 09:22:44.525 +04:00 [DBG] Opening connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-07-15 09:22:44.536 +04:00 [DBG] Opened connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-07-15 09:22:44.537 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-07-15 09:22:44.538 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2025-07-15 09:22:44.558 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (21ms).
+2025-07-15 09:22:44.568 +04:00 [DBG] Executing DbCommand [Parameters=[@__name_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Name], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Name] = @__name_0 AND [u].[Password] = @__password_1
+2025-07-15 09:22:44.696 +04:00 [INF] Executed DbCommand (136ms) [Parameters=[@__name_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Name], [u].[Password]
+FROM [Users] AS [u]
+WHERE [u].[Name] = @__name_0 AND [u].[Password] = @__password_1
+2025-07-15 09:22:44.847 +04:00 [DBG] Context 'AppDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-07-15 09:22:44.883 +04:00 [DBG] Closing data reader to 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-07-15 09:22:44.884 +04:00 [DBG] A data reader for 'OrderApp' on server 'DESKTOP-ZAKIR' is being disposed after spending 188ms reading results.
+2025-07-15 09:22:44.885 +04:00 [DBG] Closing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-07-15 09:22:44.885 +04:00 [DBG] Closed connection to database 'OrderApp' on server 'DESKTOP-ZAKIR' (0ms).
+2025-07-15 09:22:44.966 +04:00 [INF] Executed endpoint 'HTTP: POST /auth/login'
+2025-07-15 09:22:45.048 +04:00 [INF] Source:[::1] Request: POST http localhost:5000/auth/login  {
+  "username": "admin",
+  "password": "1234"
+} Responded with [200] in 1883ms
+2025-07-15 09:22:45.051 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:22:45.053 +04:00 [DBG] 'AppDbContext' disposed.
+2025-07-15 09:22:45.059 +04:00 [DBG] Disposing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-07-15 09:22:45.060 +04:00 [DBG] Disposed connection to database '' on server '' (0ms).
+2025-07-15 09:22:45.060 +04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5000/auth/login - 200 309 application/json 1905.3613ms
+2025-07-15 09:23:04.359 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Roles - null null
+2025-07-15 09:23:04.359 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:23:04.359 +04:00 [DBG] Request matched endpoint 'HTTP: GET /Roles'
+2025-07-15 09:23:04.360 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:23:04.360 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:23:04.541 +04:00 [DBG] Successfully validated the token.
+2025-07-15 09:23:04.546 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:23:04.546 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:23:04.546 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Roles - 401 0 null 187.2216ms
+2025-07-15 09:23:11.550 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Roles - null null
+2025-07-15 09:23:11.550 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:23:11.550 +04:00 [DBG] Request matched endpoint 'HTTP: GET /Roles'
+2025-07-15 09:23:11.552 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:23:11.553 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:23:11.556 +04:00 [DBG] Successfully validated the token.
+2025-07-15 09:23:11.556 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:23:11.557 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:23:11.557 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Roles - 401 0 null 7.2512ms
+2025-07-15 09:23:42.082 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - null null
+2025-07-15 09:23:42.082 +04:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-07-15 09:23:42.083 +04:00 [DBG] Request did not match any endpoints
+2025-07-15 09:23:42.083 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-15 09:23:42.084 +04:00 [DBG] Connection id "0HNE3BRT0EE31" accepted.
+2025-07-15 09:23:42.087 +04:00 [DBG] Connection id "0HNE3BRT0EE31" started.
+2025-07-15 09:23:42.134 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:23:42.134 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - 200 null text/html; charset=utf-8 52.6639ms
+2025-07-15 09:23:43.243 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - null null
+2025-07-15 09:23:43.243 +04:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-07-15 09:23:43.243 +04:00 [DBG] Request did not match any endpoints
+2025-07-15 09:23:43.244 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-07-15 09:23:43.250 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:23:43.251 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 32.7384ms
+2025-07-15 09:23:48.886 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Roles - null null
+2025-07-15 09:23:48.887 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:23:48.887 +04:00 [DBG] Request matched endpoint 'HTTP: GET /Roles'
+2025-07-15 09:23:48.888 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:23:48.888 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:23:48.889 +04:00 [DBG] Successfully validated the token.
+2025-07-15 09:23:48.890 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:23:48.891 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:23:48.892 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Roles - 401 0 null 5.7485ms
+2025-07-15 09:24:43.749 +04:00 [DBG] Connection id "0HNE3BRT0EE31" received FIN.
+2025-07-15 09:24:43.828 +04:00 [DBG] Connection id "0HNE3BRT0EE31" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-07-15 09:24:43.829 +04:00 [DBG] Connection id "0HNE3BRT0EE31" disconnecting.
+2025-07-15 09:24:43.830 +04:00 [DBG] Connection id "0HNE3BRT0EE31" stopped.
+2025-07-15 09:24:51.801 +04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/Roles - null null
+2025-07-15 09:24:51.802 +04:00 [DBG] 1 candidate(s) found for the request path '/Roles'
+2025-07-15 09:24:51.802 +04:00 [DBG] Request matched endpoint 'HTTP: GET /Roles'
+2025-07-15 09:24:51.803 +04:00 [DBG] Policy authentication schemes  did not succeed
+2025-07-15 09:24:51.804 +04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-15 09:24:51.807 +04:00 [DBG] Successfully validated the token.
+2025-07-15 09:24:51.807 +04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-15 09:24:51.808 +04:00 [DBG] Connection id "0HNE3BRT0EE2V" completed keep alive response.
+2025-07-15 09:24:51.808 +04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/Roles - 401 0 null 6.4633ms

@@ -1,0 +1,37 @@
+2025-07-10 11:13:06.012 +04:00 [FTL] The application failed to start correctly
+System.InvalidOperationException: The type 'OrderApp.Infrastructure.Data.EfRepository`1' does not implement the interface 'OrderApp.SharedKernel.Interfaces.IRepository`1'.
+   at Autofac.Features.OpenGenerics.OpenGenericServiceBinder.EnforceBindable(Type implementationType, IEnumerable`1 services)
+   at Autofac.Features.OpenGenerics.OpenGenericRegistrationSource..ctor(RegistrationData registrationData, IResolvePipelineBuilder existingPipelineBuilder, ReflectionActivatorData activatorData)
+   at Autofac.Features.OpenGenerics.OpenGenericRegistrationExtensions.<>c__DisplayClass0_0.<RegisterGeneric>b__0(IComponentRegistryBuilder cr)
+   at Autofac.ContainerBuilder.Build(IComponentRegistryBuilder componentRegistry, Boolean excludeDefaultModules)
+   at Autofac.ContainerBuilder.UpdateRegistry(IComponentRegistryBuilder componentRegistry)
+   at Autofac.Module.Configure(IComponentRegistryBuilder componentRegistry)
+   at Autofac.Core.Registration.ModuleRegistrar.<.ctor>b__1_0(IComponentRegistryBuilder reg)
+   at Autofac.ContainerBuilder.Build(IComponentRegistryBuilder componentRegistry, Boolean excludeDefaultModules)
+   at Autofac.ContainerBuilder.Build(ContainerBuildOptions options)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProviderFactory.CreateServiceProvider(ContainerBuilder containerBuilder)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Web\Program.cs:line 95
+2025-07-10 11:17:40.488 +04:00 [FTL] The application failed to start correctly
+System.InvalidOperationException: The type 'OrderApp.Infrastructure.Data.EfRepository`1' does not implement the interface 'Ardalis.SharedKernel.IRepository`1'.
+   at Autofac.Features.OpenGenerics.OpenGenericServiceBinder.EnforceBindable(Type implementationType, IEnumerable`1 services)
+   at Autofac.Features.OpenGenerics.OpenGenericRegistrationSource..ctor(RegistrationData registrationData, IResolvePipelineBuilder existingPipelineBuilder, ReflectionActivatorData activatorData)
+   at Autofac.Features.OpenGenerics.OpenGenericRegistrationExtensions.<>c__DisplayClass0_0.<RegisterGeneric>b__0(IComponentRegistryBuilder cr)
+   at Autofac.ContainerBuilder.Build(IComponentRegistryBuilder componentRegistry, Boolean excludeDefaultModules)
+   at Autofac.ContainerBuilder.Build(ContainerBuildOptions options)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProviderFactory.CreateServiceProvider(ContainerBuilder containerBuilder)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Web\Program.cs:line 95
+2025-07-10 11:22:52.048 +04:00 [FTL] The application failed to start correctly
+System.InvalidOperationException: The type 'OrderApp.Infrastructure.Data.EfRepository`1' does not implement the interface 'Ardalis.SharedKernel.IRepository`1'.
+   at Autofac.Features.OpenGenerics.OpenGenericServiceBinder.EnforceBindable(Type implementationType, IEnumerable`1 services)
+   at Autofac.Features.OpenGenerics.OpenGenericRegistrationSource..ctor(RegistrationData registrationData, IResolvePipelineBuilder existingPipelineBuilder, ReflectionActivatorData activatorData)
+   at Autofac.Features.OpenGenerics.OpenGenericRegistrationExtensions.<>c__DisplayClass0_0.<RegisterGeneric>b__0(IComponentRegistryBuilder cr)
+   at Autofac.ContainerBuilder.Build(IComponentRegistryBuilder componentRegistry, Boolean excludeDefaultModules)
+   at Autofac.ContainerBuilder.Build(ContainerBuildOptions options)
+   at Autofac.Extensions.DependencyInjection.AutofacServiceProviderFactory.CreateServiceProvider(ContainerBuilder containerBuilder)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Web\Program.cs:line 95

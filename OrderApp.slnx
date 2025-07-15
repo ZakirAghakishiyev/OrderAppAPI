@@ -1,0 +1,30 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="CleanArchitecture.nuspec" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/OrderApp.AspireHost/OrderApp.AspireHost.csproj" />
+    <Project Path="src/OrderApp.Core/OrderApp.Core.csproj" />
+    <Project Path="src/OrderApp.Infrastructure/OrderApp.Infrastructure.csproj" />
+    <Project Path="src/OrderApp.ServiceDefaults/OrderApp.ServiceDefaults.csproj" />
+    <Project Path="src/OrderApp.UseCases/OrderApp.UseCases.csproj" />
+    <Project Path="src/OrderApp.Web/OrderApp.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/OrderApp.FunctionalTests/OrderApp.FunctionalTests.csproj">
+      <BuildDependency Project="src/OrderApp.Web/OrderApp.Web.csproj" />
+    </Project>
+    <Project Path="tests/OrderApp.IntegrationTests/OrderApp.IntegrationTests.csproj">
+      <BuildDependency Project="src/OrderApp.Infrastructure/OrderApp.Infrastructure.csproj" />
+    </Project>
+    <Project Path="tests/OrderApp.UnitTests/OrderApp.UnitTests.csproj" />
+  </Folder>
+</Solution>

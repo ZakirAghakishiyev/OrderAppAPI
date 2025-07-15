@@ -1,0 +1,15 @@
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Core\bin\Debug\net9.0\OrderApp.Core.deps.json
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Core\bin\Debug\net9.0\OrderApp.Core.dll
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Core\bin\Debug\net9.0\OrderApp.Core.pdb
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Core\bin\Debug\net9.0\OrderApp.SharedKernel.dll
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Core\bin\Debug\net9.0\OrderApp.SharedKernel.pdb
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Core\obj\Debug\net9.0\OrderApp.Core.csproj.AssemblyReference.cache
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Core\obj\Debug\net9.0\OrderApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Core\obj\Debug\net9.0\OrderApp.Core.AssemblyInfoInputs.cache
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Core\obj\Debug\net9.0\OrderApp.Core.AssemblyInfo.cs
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Core\obj\Debug\net9.0\OrderApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Core\obj\Debug\net9.0\OrderApp.26C85D53.Up2Date
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Core\obj\Debug\net9.0\OrderApp.Core.dll
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Core\obj\Debug\net9.0\refint\OrderApp.Core.dll
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Core\obj\Debug\net9.0\OrderApp.Core.pdb
+C:\Users\zakir\OneDrive\Masaüstü\Work\OrderApp\src\OrderApp.Core\obj\Debug\net9.0\ref\OrderApp.Core.dll
