@@ -1,4 +1,5 @@
 using Autofac;
+using OrderApp.Core.MailSeting;
 using OrderApp.Core.Services;
 using OrderApp.Infrastructure.Auth;
 using OrderApp.Infrastructure.Data;
@@ -6,13 +7,14 @@ using OrderApp.Infrastructure.Interceptors;
 using OrderApp.SharedKernel.Interfaces;
 using OrderApp.Web.Companies;
 using OrderApp.Web.Orders.Create;
+using OrderApp.Web.RegisterEndpoint;
 using OrderApp.Web.Roles;
 using OrderApp.Web.Services;
 using OrderApp.Web.Users;
 
 namespace OrderApp.Web;
 
-public class OrderAppModule : Module
+public class OrderAppModule() : Module
 {
     protected override void Load(ContainerBuilder builder)
     {
@@ -35,7 +37,9 @@ public class OrderAppModule : Module
         builder.RegisterType<AuditSaveChangesInterceptor>()
             .AsSelf()
             .InstancePerLifetimeScope();
-
+        builder.RegisterType<RegisterEndpointService>()
+            .AsSelf()
+            .InstancePerLifetimeScope();
         builder.RegisterType<AuthenticatedUserAccessor>()
             .As<IAuthenticatedUserAccessor>()
             .InstancePerLifetimeScope();
@@ -52,6 +56,9 @@ public class OrderAppModule : Module
                .AsSelf()
                .InstancePerLifetimeScope();
 
+        builder.RegisterType<MailService>()
+                .AsSelf()
+                .InstancePerLifetimeScope();
     }
 
 }

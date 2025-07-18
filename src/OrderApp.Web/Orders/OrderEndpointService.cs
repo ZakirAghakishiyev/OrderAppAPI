@@ -35,14 +35,31 @@ public class OrderEndpointService(SK.IRepository<MO.Order> _orderRepository, Aut
 
     public async Task<DeleteOrderResponse?> DeleteAsync(DeleteOrderRequest req, CancellationToken ct)
     {
-        var spec = new OrderByIdWithIncludesSpec(req.Id);
-        var order = await _orderRepository.FirstOrDefaultAsync(spec, ct);
-        if (order == null||order.IsDeleted)
+        try
+        {
+            if (req == null)
+            {
+                throw new ArgumentNullException(nameof(req), "DeleteOrderRequest cannot be null");
+            }
+            if (req.Id <= 0)
+            {
+                throw new ArgumentException("Invalid order ID");
+            }
+            var order = await _orderRepository.FirstOrDefaultAsync(
+                new OrderByIdWithIncludesSpec(req.Id), ct);
+            if (order == null)
+            {
+                Log.Warning("Order with ID {Id} not found", req.Id);
+                return null;
+            }
+            await _orderRepository.DeleteAsync(order, ct);
+            return _mapper.Map<DeleteOrderResponse>(order);
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Unhandled");
             return null;
-        order.IsDeleted=true;
-        await _orderRepository.UpdateAsync(order);
-        Console.WriteLine("Deleted: "+order.IsDeleted);
-        return _mapper.Map<DeleteOrderResponse>(order);
+        }
     }
 
     public async Task<GetOrderByIdResponse?> GetByIdAsync(GetOrderByIdRequest req, CancellationToken ct)

@@ -58,17 +58,46 @@ public class Automapper : Profile
         CreateMap<Role, DeleteRoleRequest>().ReverseMap();
         CreateMap<Role, DeleteRoleResponse>().ReverseMap();
 
-        CreateMap<User, CreateUserRequest>().ReverseMap();
+        CreateMap<CreateUserRequest, User>()
+            .ForMember(dest => dest.Roles, opt => opt.MapFrom(src =>
+                src.Roles.Select(roleId => new UserRole { RoleId = roleId }).ToList()
+            ));
         CreateMap<User, CreateUserResponse>().ReverseMap();
         CreateMap<User, DeleteUserResponse>().ReverseMap();
         CreateMap<User, DeleteUserRequest>().ReverseMap();
-        CreateMap<User, UpdateUserResponse>().ReverseMap();
-        CreateMap<User, UpdateUserRequest>().ReverseMap();
-        CreateMap<User, UserListResponse>().ReverseMap();
-        CreateMap<User, UserRecord>().ReverseMap();
-        CreateMap<User, GetUserByIdRequest>().ReverseMap();
-        CreateMap<User, GetUserByIdResponse>().ReverseMap();
+        CreateMap<User, UpdateUserRequest>()
+            .ForMember(dest => dest.Roles, opt => opt.MapFrom(src =>
+                src.Roles.Select(ur => (RoleEnum)ur.RoleId)))
+            .ReverseMap()
+            .ForMember(dest => dest.Roles, opt => opt.MapFrom(src =>
+                src.Roles.Select(role => new UserRole { RoleId = (int)role })));
 
+        CreateMap<User, UpdateUserResponse>()
+            .ForCtorParam("id", opt => opt.MapFrom(src => src.Id))
+            .ForCtorParam("name", opt => opt.MapFrom(src => src.Name))
+            .ForCtorParam("email", opt => opt.MapFrom(src => src.Email))
+            .ForCtorParam("password", opt => opt.MapFrom(src => src.Password))
+            .ForCtorParam("Roles", opt => opt.MapFrom(src =>
+                src.Roles.Select(ur => (RoleEnum)ur.RoleId)))
+            .ReverseMap()
+            .ForMember(dest => dest.Roles, opt => opt.MapFrom(src =>
+                src.Roles.Select(role => new UserRole { RoleId = (int)role })));
+
+        CreateMap<User, UserListResponse>().ReverseMap();
+        CreateMap<User, UserRecord>()
+            .ForCtorParam("Roles", opt => opt.MapFrom(src =>
+                src.Roles.Select(ur => (RoleEnum)ur.RoleId)))
+            .ReverseMap()
+            .ForMember(dest => dest.Roles, opt => opt.MapFrom(src =>
+                src.Roles.Select(role => new UserRole { RoleId = (int)role })));
+        CreateMap<User, GetUserByIdRequest>().ReverseMap();
+        CreateMap<User, GetUserByIdResponse>()
+            .ForMember(dest => dest.Roles, opt => opt.MapFrom(src =>
+                src.Roles.Select(ur => (RoleEnum)ur.RoleId)))
+            .ReverseMap()
+            .ForMember(dest => dest.Roles, opt => opt.MapFrom(src =>
+                src.Roles.Select(role => new UserRole { RoleId = (int)role })));
+                
         CreateMap<OrderModel.Order, CreateOrderResponse>().ReverseMap();
         CreateMap<OrderModel.Order, CreateOrderRequest>().ReverseMap();
         CreateMap<OrderModel.Order, UpdateOrderResponse>().ReverseMap();
@@ -77,7 +106,6 @@ public class Automapper : Profile
             .ForMember(dest => dest.User, opt => opt.MapFrom(src => src.User))
             .ForMember(dest => dest.Product, opt => opt.MapFrom(src => src.Product));
         CreateMap<GetOrderByIdResponse, OrderRecord>();
-        CreateMap<UserModel.User, GetUserByIdResponse>().ReverseMap();
         CreateMap<Product, GetProductByIdResponse>()
             .ForMember(dest => dest.Company, opt => opt.MapFrom(src => src.Company))
             .ReverseMap();

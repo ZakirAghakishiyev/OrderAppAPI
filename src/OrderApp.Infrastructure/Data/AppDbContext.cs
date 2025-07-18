@@ -6,23 +6,29 @@ using OrderApp.Core.OrderAggregate;
 using Microsoft.EntityFrameworkCore;
 using Ardalis.SharedKernel;
 using OrderApp.Infrastructure.Interceptors;
+using OrderApp.SharedKernel;
+using System.Linq.Expressions;
 
 namespace OrderApp.Infrastructure.Data;
 public class AppDbContext : DbContext
 {
   private readonly IDomainEventDispatcher? _dispatcher;
   private readonly AuditSaveChangesInterceptor _auditInterceptor;
+  private readonly SoftDeleteInterceptor _softDeleteInterceptor;
 
-  public AppDbContext(DbContextOptions<AppDbContext> options,
-        AuditSaveChangesInterceptor auditInterceptor, IDomainEventDispatcher? dispatcher = null)
-      : base(options)
-  {
-    _dispatcher = dispatcher;
-    _auditInterceptor = auditInterceptor;
-  }
-  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+    public AppDbContext(DbContextOptions<AppDbContext> options,
+            AuditSaveChangesInterceptor auditInterceptor, SoftDeleteInterceptor softDeleteInterceptor, IDomainEventDispatcher? dispatcher = null)
+          : base(options)
+    {
+        _dispatcher = dispatcher;
+        _auditInterceptor = auditInterceptor;
+        _softDeleteInterceptor = softDeleteInterceptor;
+    }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.AddInterceptors(_auditInterceptor);
+        optionsBuilder.AddInterceptors(_softDeleteInterceptor);
     }
   // public DbSet<Contributor> Contributors => Set<Contributor>();
   public DbSet<Company> Companies { set; get; }
@@ -33,6 +39,18 @@ public class AppDbContext : DbContext
   public DbSet<Order> Orders { set; get; }
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
+    foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+    {
+        if (typeof(ISoftDeletedEntity<User>).IsAssignableFrom(entityType.ClrType))
+        {
+            var parameter = Expression.Parameter(entityType.ClrType, "e");
+            var isDeletedProp = Expression.Property(parameter, nameof(ISoftDeletedEntity<User>.IsDeleted));
+            var condition = Expression.Equal(isDeletedProp, Expression.Constant(false));
+            var lambda = Expression.Lambda(condition, parameter);
+
+            modelBuilder.Entity(entityType.ClrType).HasQueryFilter(lambda);
+        }
+    }
     base.OnModelCreating(modelBuilder);
     modelBuilder.Entity<Order>()
         .HasOne(o => o.User)
@@ -57,11 +75,32 @@ public class AppDbContext : DbContext
         .WithMany()
         .HasForeignKey("CreatedUserId")
         .OnDelete(DeleteBehavior.NoAction);
+        
     modelBuilder.Entity<UserRole>()
-        .HasOne(u=>u.User)
+        .HasKey(ur => ur.Id); 
+
+    modelBuilder.Entity<UserRole>()
+        .Property(ur => ur.Id)
+        .ValueGeneratedOnAdd(); 
+
+    modelBuilder.Entity<UserRole>()
+        .HasOne(ur => ur.User)
+        .WithMany(u => u.Roles)
+        .HasForeignKey(ur => ur.UserId)
+        .OnDelete(DeleteBehavior.NoAction); 
+
+    modelBuilder.Entity<UserRole>()
+        .HasOne(ur => ur.Role)
         .WithMany()
-        .HasForeignKey("UserId")
-        .OnDelete(DeleteBehavior.NoAction);
+        .HasForeignKey(ur => ur.RoleId)
+        .OnDelete(DeleteBehavior.Restrict);
+    modelBuilder.Entity<User>()
+        .HasMany(u => u.Roles)
+        .WithOne()
+        .HasForeignKey(ur => ur.UserId)
+        .OnDelete(DeleteBehavior.Cascade);
+
+
     modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
   }
 

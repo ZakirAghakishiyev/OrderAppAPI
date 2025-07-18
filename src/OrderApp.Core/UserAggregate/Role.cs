@@ -12,5 +12,5 @@ public class Role : BaseEntity, INamedEntity, IAggregateRoot
 public enum RoleEnum
 {
     Admin = 1,
-    Customer
+    Customer = 2
 }

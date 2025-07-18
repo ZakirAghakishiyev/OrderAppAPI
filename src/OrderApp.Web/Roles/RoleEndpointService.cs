@@ -55,9 +55,22 @@ public class RoleEndpointService(SK.IRepository<Mo.Role> _repository, AutoMap.IM
         }
     }
 
-    public Task<GetRoleByIdResponse?> GetByIdAsync(GetRoleByIdRequest req, CancellationToken ct)
+    public async Task<GetRoleByIdResponse?> GetByIdAsync(GetRoleByIdRequest req, CancellationToken ct)
     {
-        throw new NotImplementedException();
+        try
+        {
+            if (req == null)
+                throw new Exception("Request is null");
+            var role = await _repository.GetByIdAsync(req.Id, ct);
+            if (role == null)
+                throw new NullReferenceException("No such user");
+            return _mapper.Map<GetRoleByIdResponse>(role);
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Unhandled");
+            return null!;
+        }
     }
 
     public async Task<RoleListResponse> ListAsync(CancellationToken ct)

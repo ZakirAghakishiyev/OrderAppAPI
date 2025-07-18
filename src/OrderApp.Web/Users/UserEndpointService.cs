@@ -8,11 +8,13 @@ using MO = OrderApp.Core.UserAggregate;
 using AutoMap = AutoMapper;
 using Ardalis.GuardClauses;
 using OrderApp.Web.Users.List;
+using OrderApp.Core.UserAggregate.Specifications;
 
 
 namespace OrderApp.Web.Users;
 
-public class UserEndpointService(SK.IRepository<User> _userRepository, AutoMap.IMapper _mapper) : IUserEndpointService
+public class UserEndpointService(SK.IRepository<User> _userRepository,
+                                AutoMap.IMapper _mapper) : IUserEndpointService
 {
     public async Task<CreateUserResponse> CreateAsync(CreateUserRequest req, CancellationToken ct)
     {
@@ -20,6 +22,7 @@ public class UserEndpointService(SK.IRepository<User> _userRepository, AutoMap.I
         {
             if (req == null)
                 throw new Exception("Request is null");
+
             var user = _mapper.Map<User>(req);
             await _userRepository.AddAsync(user, ct);
             return _mapper.Map<CreateUserResponse>(user);
@@ -56,7 +59,7 @@ public class UserEndpointService(SK.IRepository<User> _userRepository, AutoMap.I
         {
             if (req == null)
                 throw new Exception("Request is null");
-            var user = await _userRepository.GetByIdAsync(req.UserId, ct);
+            var user = await _userRepository.FirstOrDefaultAsync(new IncludeUserRoleByIdSpec(req.UserId), ct);
             if (user == null)
                 throw new NullReferenceException("No such user");
             return _mapper.Map<GetUserByIdResponse>(user);
@@ -70,7 +73,7 @@ public class UserEndpointService(SK.IRepository<User> _userRepository, AutoMap.I
 
     public async Task<UserListResponse> ListAsync(CancellationToken ct)
     {
-        var users = await _userRepository.ListAsync(ct);
+        var users = await _userRepository.ListAsync(new IncludeUserRolesSpec(),ct);
         var res = new UserListResponse();
         res.Users=_mapper.Map<List<UserRecord>>(users);
         return res;

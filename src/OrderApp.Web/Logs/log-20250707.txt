@@ -1,6 +1,0 @@
-2025-07-07 12:52:32.726 +04:00 [INF] Options were configured
-2025-07-07 12:52:32.795 +04:00 [INF] Infrastructure services registered
-2025-07-07 12:52:32.817 +04:00 [INF] Mediatr and Email Sender services registered
-2025-07-07 12:53:39.629 +04:00 [INF] Options were configured
-2025-07-07 12:53:39.745 +04:00 [INF] Infrastructure services registered
-2025-07-07 12:53:39.822 +04:00 [INF] Mediatr and Email Sender services registered

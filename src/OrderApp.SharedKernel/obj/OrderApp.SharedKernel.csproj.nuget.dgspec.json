@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\OrderApp.SharedKernel.csproj": {}
+    "E:\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\OrderApp.SharedKernel.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\OrderApp.SharedKernel.csproj": {
+    "E:\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\OrderApp.SharedKernel.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\OrderApp.SharedKernel.csproj",
+        "projectUniqueName": "E:\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\OrderApp.SharedKernel.csproj",
         "projectName": "OrderApp.SharedKernel",
-        "projectPath": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\OrderApp.SharedKernel.csproj",
+        "projectPath": "E:\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\OrderApp.SharedKernel.csproj",
         "packagesPath": "C:\\Users\\zakir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\obj\\",
+        "outputPath": "E:\\Work\\OrderApp\\src\\OrderApp.SharedKernel\\obj\\",
         "projectStyle": "PackageReference",
         "centralPackageVersionsManagementEnabled": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\NuGet.Config",
+          "E:\\Work\\OrderApp\\NuGet.Config",
           "C:\\Users\\zakir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

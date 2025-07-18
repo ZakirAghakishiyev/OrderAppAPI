@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D2fg6RBUYx8=",
+  "dgSpecHash": "VY85DXPtN/I=",
   "success": true,
-  "projectFilePath": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.Web\\OrderApp.Web.csproj",
+  "projectFilePath": "E:\\Work\\OrderApp\\src\\OrderApp.Web\\OrderApp.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zakir\\.nuget\\packages\\ardalis.guardclauses\\5.0.0\\ardalis.guardclauses.5.0.0.nupkg.sha512",
     "C:\\Users\\zakir\\.nuget\\packages\\ardalis.liststartupservices\\1.1.4\\ardalis.liststartupservices.1.1.4.nupkg.sha512",

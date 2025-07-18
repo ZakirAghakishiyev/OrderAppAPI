@@ -1,12 +1,19 @@
 namespace OrderApp.Web.Orders.Create;
-using AutoMapper=AutoMapper;
+
+using AutoMapper = AutoMapper;
+using OrderApp.Endpoint.Attributes;
+using OrderApp.Core.UserAggregate;
 
 public class Create(IOrderEndpointService _endpointService, AutoMapper.IMapper _mapper):Endpoint<CreateOrderRequest, CreateOrderResponse>
 {
     public override void Configure()
     {
         Post(CreateOrderRequest.Route);
-        AllowAnonymous();
+        Policies(Endpoint.Constants.Policies.RoutePermissionPolicy);
+        Options(opt => opt
+            .WithMetadata(new PermissionAttribute(RoleEnum.Admin))
+  //          .WithMetadata(new PermissionAttribute(RoleEnum.Customer)) 
+        );
     }
 
     public override async Task HandleAsync(CreateOrderRequest request, CancellationToken ct)

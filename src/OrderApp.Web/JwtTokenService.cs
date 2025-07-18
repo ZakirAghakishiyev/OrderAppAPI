@@ -30,8 +30,8 @@ public class JwtTokenService(IRepository<User> _userRepository, IConfiguration _
             throw new UnauthorizedAccessException("Invalid username or password.");
         var claims = new[]
         {
-            new Claim("id",user.Id.ToString()),
-            new Claim("username", req.Username),
+            new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
+            new Claim(ClaimTypes.Name, req.Username),
             new Claim(ClaimTypes.Role, role)
         };
 

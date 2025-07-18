@@ -1,5 +1,7 @@
 namespace OrderApp.Web.Orders.Delete;
 
+using OrderApp.Core.UserAggregate;
+using OrderApp.Endpoint.Attributes;
 using OrderApp.Web.Orders.Create;
 
 
@@ -8,8 +10,12 @@ public class Delete(IOrderEndpointService _endpointService) : Endpoint<DeleteOrd
 
     public override void Configure()
     {
-        Put(DeleteOrderRequest.Route);
-        AllowAnonymous();
+        Delete(DeleteOrderRequest.Route);
+        Policies(Endpoint.Constants.Policies.RoutePermissionPolicy);
+        Options(opt => opt
+            .WithMetadata(new PermissionAttribute(RoleEnum.Admin))
+//            .WithMetadata(new PermissionAttribute(RoleEnum.Customer)) 
+        );
     }
 
     public override async Task HandleAsync(DeleteOrderRequest request, CancellationToken ct)

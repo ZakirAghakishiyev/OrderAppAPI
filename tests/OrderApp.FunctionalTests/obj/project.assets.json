@@ -7667,18 +7667,18 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\tests\\OrderApp.FunctionalTests\\OrderApp.FunctionalTests.csproj",
+      "projectUniqueName": "E:\\Work\\OrderApp\\tests\\OrderApp.FunctionalTests\\OrderApp.FunctionalTests.csproj",
       "projectName": "OrderApp.FunctionalTests",
-      "projectPath": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\tests\\OrderApp.FunctionalTests\\OrderApp.FunctionalTests.csproj",
+      "projectPath": "E:\\Work\\OrderApp\\tests\\OrderApp.FunctionalTests\\OrderApp.FunctionalTests.csproj",
       "packagesPath": "C:\\Users\\zakir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\tests\\OrderApp.FunctionalTests\\obj\\",
+      "outputPath": "E:\\Work\\OrderApp\\tests\\OrderApp.FunctionalTests\\obj\\",
       "projectStyle": "PackageReference",
       "centralPackageVersionsManagementEnabled": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\NuGet.Config",
+        "E:\\Work\\OrderApp\\NuGet.Config",
         "C:\\Users\\zakir\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -7694,14 +7694,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.Infrastructure\\OrderApp.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.Infrastructure\\OrderApp.Infrastructure.csproj"
+            "E:\\Work\\OrderApp\\src\\OrderApp.Infrastructure\\OrderApp.Infrastructure.csproj": {
+              "projectPath": "E:\\Work\\OrderApp\\src\\OrderApp.Infrastructure\\OrderApp.Infrastructure.csproj"
             },
-            "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.UseCases\\OrderApp.UseCases.csproj": {
-              "projectPath": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.UseCases\\OrderApp.UseCases.csproj"
+            "E:\\Work\\OrderApp\\src\\OrderApp.UseCases\\OrderApp.UseCases.csproj": {
+              "projectPath": "E:\\Work\\OrderApp\\src\\OrderApp.UseCases\\OrderApp.UseCases.csproj"
             },
-            "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.Web\\OrderApp.Web.csproj": {
-              "projectPath": "C:\\Users\\zakir\\OneDrive\\Masaüstü\\Work\\OrderApp\\src\\OrderApp.Web\\OrderApp.Web.csproj"
+            "E:\\Work\\OrderApp\\src\\OrderApp.Web\\OrderApp.Web.csproj": {
+              "projectPath": "E:\\Work\\OrderApp\\src\\OrderApp.Web\\OrderApp.Web.csproj"
             }
           }
         }

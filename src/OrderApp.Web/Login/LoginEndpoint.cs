@@ -2,20 +2,13 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
+using OrderApp.Core.UserAggregate;
+using OrderApp.SharedKernel.Interfaces;
 
 namespace OrderApp.Web.Login;
 
-public class LoginEndpoint : Endpoint<LoginRequest, LoginResponse>
+public class LoginEndpoint(IRepository<User> _userRepository, JwtTokenService _tokenService) : Endpoint<LoginRequest, LoginResponse>
 {
-    private readonly IConfiguration _config;
-    private readonly JwtTokenService _tokenService;
-
-    public LoginEndpoint(IConfiguration config, JwtTokenService tokenService)
-    {
-        _config = config;
-        _tokenService = tokenService;
-    }
-
     public override void Configure()
     {
         Post("/auth/login");
@@ -25,7 +18,8 @@ public class LoginEndpoint : Endpoint<LoginRequest, LoginResponse>
     public override async Task HandleAsync(LoginRequest req, CancellationToken ct)
     {
         // Dummy check, replace with DB/user service
-        if (req.Username != "admin" || req.Password != "1234")
+        if (await _userRepository.FirstOrDefaultAsync(new UserByNameAndPasswordSpec(req.Username, req.Password), ct) is not User user)
+
         {
             await SendUnauthorizedAsync(ct);
             return;

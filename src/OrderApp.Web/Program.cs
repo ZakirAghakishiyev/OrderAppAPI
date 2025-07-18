@@ -17,6 +17,7 @@ using OrderApp.Infrastructure.Interceptors;
 using Microsoft.AspNetCore.Authorization;
 using OrderApp.Web.Security.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using OrderApp.Core.MailSeting;
 
 var logger = new LoggerConfiguration()
     .MinimumLevel.Debug() // Change to Debug or Information
@@ -41,14 +42,6 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
     Args = args
 });
 builder.Host.UseSerilog(logger);
-// logger.Error("This is a test error");
-// logger.Warning("This is a test warning");
-
-
-
-// builder.Services.AddScoped<IOrderEndpointService, OrderEndpointService>();
-// builder.Services.AddScoped<IUserEndpointService, UserEndpointService>();
-// builder.Services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Services.AddHttpContextAccessor();
 
@@ -56,7 +49,6 @@ builder.Host.ConfigureContainer<ContainerBuilder>(container =>
 {
     container.RegisterModule(new OrderAppModule());
 });       
-// builder.Configuration.AddJsonFile("src/OrderApp.Web/appsettings.json", optional: false, reloadOnChange: true);
 
 builder.Services.AddAutoMapper(typeof(Automapper).Assembly);
 // builder.AddLoggerConfigs();
@@ -70,6 +62,8 @@ Guard.Against.Null(connectionString, nameof(connectionString));
 
 builder.Services.Configure<MySecretsOptions>(
     builder.Configuration.GetSection("MySecrets"));
+builder.Services.Configure<SmtpSettings>(
+    builder.Configuration.GetSection("Smtp"));
 
 builder.Services.AddDbContext<AppDbContext>((sp, options) =>
 {    
@@ -78,7 +72,6 @@ builder.Services.AddDbContext<AppDbContext>((sp, options) =>
     options.UseSqlServer(secrets.ConnectionString);
 });
 
-// Console.WriteLine($"Connection string: {connectionString ?? "NULL"}");
 
 // builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
 

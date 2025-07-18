@@ -49,8 +49,8 @@ public static class SeedData
   {
     if (await dbContext.Users.AnyAsync()) return; 
 
-    var user1 = new User { Name = "Alice", Password=""};
-    var user2 = new User { Name = "Bob", Password="" };
+    var user1 = new User { Name = "Alice", Password="", Email = "alice@gmail.com"};
+    var user2 = new User { Name = "Bob", Password="", Email="bob@gmail.com"};
 
     dbContext.Users.AddRange(user1, user2);
     await dbContext.SaveChangesAsync();

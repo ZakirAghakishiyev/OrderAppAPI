@@ -19,6 +19,6 @@ public class Update(IUserEndpointService _userEndpointService) : Endpoint<Update
             await SendNotFoundAsync(cancellationToken);
             return;
         }
-        await SendOkAsync(new UpdateUserResponse(user.Id,user.Name,user.Password), cancellationToken);
+        await SendOkAsync(user, cancellationToken);
     }
 }
