@@ -44,7 +44,10 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 builder.Host.UseSerilog(logger);
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Services.AddHttpContextAccessor();
-
+builder.Configuration
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .AddUserSecrets<Program>()
+    .AddEnvironmentVariables();
 builder.Host.ConfigureContainer<ContainerBuilder>(container =>
 {
     container.RegisterModule(new OrderAppModule());
@@ -106,14 +109,15 @@ builder.Services.AddHttpContextAccessor();
 
 
 builder.Services.AddSingleton<IAuthorizationPolicyProvider, CustomAuthorizationPolicyProvider>();
-builder.Services.AddTransient<IAuthorizationHandler, RoutePermissionAuthorizationHandler>(); 
+builder.Services.AddTransient<IAuthorizationHandler, RoutePermissionAuthorizationHandler>();
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("RoutePermissionPolicy", policy =>
     {
         policy.RequireAuthenticatedUser();
     });
-});builder.Services.AddFastEndpoints()
+});
+builder.Services.AddFastEndpoints()
                 .SwaggerDocument(o =>
                 {
                   o.ShortSchemaNames = true;
@@ -129,6 +133,7 @@ try
     using (var scope = app.Services.CreateScope())
     {
         var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        //await dbContext.Database.EnsureDeletedAsync();
         await dbContext.Database.EnsureCreatedAsync();
     }
     app.UseAuthentication();

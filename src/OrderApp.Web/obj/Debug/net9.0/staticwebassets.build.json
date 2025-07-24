@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XorzioeUZ+UW59ZqQ4S9B7rVPX7KKBoQVONj9NRTNDo=",
+  "Hash": "Ny9VC19iCileN9LyoOdvWqubxGe86fm7Sg1hyPA4H3c=",
   "Source": "OrderApp.Web",
   "BasePath": "_content/OrderApp.Web",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "OrderApp.Web\\wwwroot",
       "Source": "OrderApp.Web",
-      "ContentRoot": "D:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\",
+      "ContentRoot": "E:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\",
       "BasePath": "_content/OrderApp.Web",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\.gitkeep",
+      "Identity": "E:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\.gitkeep",
       "SourceId": "OrderApp.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\",
+      "ContentRoot": "E:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\",
       "BasePath": "_content/OrderApp.Web",
       "RelativePath": "#[.{fingerprint}]?.gitkeep",
       "AssetKind": "All",
@@ -38,10 +38,10 @@
       "OriginalItemSpec": "wwwroot\\.gitkeep"
     },
     {
-      "Identity": "D:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\Create.CreateCompanyValidator.cs",
+      "Identity": "E:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\Create.CreateCompanyValidator.cs",
       "SourceId": "OrderApp.Web",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\",
+      "ContentRoot": "E:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\",
       "BasePath": "_content/OrderApp.Web",
       "RelativePath": "Create.CreateCompanyValidator#[.{fingerprint}]?.cs",
       "AssetKind": "All",
@@ -62,7 +62,7 @@
   "Endpoints": [
     {
       "Route": ".5ipweew5fc.gitkeep",
-      "AssetFile": "D:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\.gitkeep",
+      "AssetFile": "E:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\.gitkeep",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -107,7 +107,7 @@
     },
     {
       "Route": ".gitkeep",
-      "AssetFile": "D:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\.gitkeep",
+      "AssetFile": "E:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\.gitkeep",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -144,7 +144,7 @@
     },
     {
       "Route": "Create.CreateCompanyValidator.cs",
-      "AssetFile": "D:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\Create.CreateCompanyValidator.cs",
+      "AssetFile": "E:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\Create.CreateCompanyValidator.cs",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -181,7 +181,7 @@
     },
     {
       "Route": "Create.CreateCompanyValidator.xu7dc56vcg.cs",
-      "AssetFile": "D:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\Create.CreateCompanyValidator.cs",
+      "AssetFile": "E:\\Work\\OrderApp\\src\\OrderApp.Web\\wwwroot\\Create.CreateCompanyValidator.cs",
       "Selectors": [],
       "ResponseHeaders": [
         {

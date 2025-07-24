@@ -3,6 +3,7 @@ using OrderApp.Core.UserAggregate;
 using OrderApp.Core.CompanyAggregate;
 using OrderApp.Core.ProductAggregate;
 using OrderApp.Core.OrderAggregate;
+using OrderApp.Core.BaseAggregate;
 
 namespace OrderApp.Infrastructure.Data;
 
@@ -20,6 +21,8 @@ public static class SeedData
     else await PopulateProductDataAsync(dbContext);
     if (await dbContext.Orders.AnyAsync()) return; // DB has been seeded
     else await PopulateOrderDataAsync(dbContext);
+    if (await dbContext.LogActions.AnyAsync()) return; // DB has been seeded
+    else await PopulateLogActionDataAsync(dbContext);
     System.Console.WriteLine("Populating Order Data in initializer...");
   }
 
@@ -51,10 +54,12 @@ public static class SeedData
 
     var user1 = new User { Name = "Alice", Password="", Email = "alice@gmail.com"};
     var user2 = new User { Name = "Bob", Password="", Email="bob@gmail.com"};
+    var user3 = new User { Name = "string", Password = "string"};
 
-    dbContext.Users.AddRange(user1, user2);
+    dbContext.Users.AddRange(user1, user2, user3);
     await dbContext.SaveChangesAsync();
   }
+  
 
   public static async Task PopulateRoleDataAsync(AppDbContext dbContext)
   {
@@ -65,7 +70,7 @@ public static class SeedData
 
     dbContext.Roles.AddRange(role1, role2);
     await dbContext.SaveChangesAsync();
-    
+
   }
   
   public static async Task PopulateOrderDataAsync(AppDbContext dbContext)
@@ -77,6 +82,17 @@ public static class SeedData
     var order2 = new Order { Id = 2, OrderDate = DateTime.UtcNow, UserId = 2, ProductId = 2 };
 
     dbContext.Orders.AddRange(order1, order2);
+    await dbContext.SaveChangesAsync();
+  }
+
+  public static async Task PopulateLogActionDataAsync(AppDbContext dbContext)
+  {
+    if (await dbContext.LogActions.AnyAsync()) return;
+    var logAction1 = new LogAction { ActionType = "Create"};
+    var logAction2 = new LogAction { ActionType = "Delete"};
+    var logAction3 = new LogAction { ActionType = "Update"};
+    var logAction4 = new LogAction { ActionType = "Select"};
+    dbContext.LogActions.AddRange(logAction1, logAction2, logAction3, logAction4);
     await dbContext.SaveChangesAsync();
   }
 }

@@ -16,27 +16,27 @@ public class AuthenticatedUserAccessor : IAuthenticatedUserAccessor
     }
 
     public AuthenticatedUser User
-{
-    get
     {
-        var user = _httpContextAccessor.HttpContext?.User;
-        if (user == null || user.Identity?.IsAuthenticated != true)
-            return new AuthenticatedUser { Id = 0, Username = "Anonymous" };
-
-        var idClaim = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-        var username = user.Identity.Name ?? "";
-
-        if (int.TryParse(idClaim, out var id))
+        get
         {
-            return new AuthenticatedUser { Id = id, Username = username, UserRoles = user.Claims
-                .Where(c => c.Type == ClaimTypes.Role)
-                .Select(c => new UserRole { RoleId = (int)Enum.Parse<RoleEnum>(c.Value) })
-                .ToList() };
-        }
+            var user = _httpContextAccessor.HttpContext?.User;
+            if (user == null || user.Identity?.IsAuthenticated != true)
+                return new AuthenticatedUser { Id = 0, Username = "Anonymous" };
 
-        return new AuthenticatedUser { Id = 0, Username = username };
+            var idClaim = user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var username = user.Identity.Name ?? "";
+
+            if (int.TryParse(idClaim, out var id))
+            {
+                return new AuthenticatedUser { Id = id, Username = username, UserRoles = user.Claims
+                    .Where(c => c.Type == ClaimTypes.Role)
+                    .Select(c => new UserRole { RoleId = (int)Enum.Parse<RoleEnum>(c.Value) })
+                    .ToList() };
+            }
+
+            return new AuthenticatedUser { Id = 0, Username = username };
+        }
     }
-}
 
 }
 

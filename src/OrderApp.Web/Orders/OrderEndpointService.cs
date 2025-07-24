@@ -10,10 +10,13 @@ using AutoMap = AutoMapper;
 using Ardalis.Specification;
 using SK = OrderApp.SharedKernel.Interfaces;
 using System.Linq;
+using OrderApp.Web.Orders.OrderLogs;
+using OrderApp.Core.OrderAggregate;
+using OrderApp.Core.OrderAggregate.Specifications;
 
 namespace OrderApp.Web.Orders.Create;
 
-public class OrderEndpointService(SK.IRepository<MO.Order> _orderRepository, AutoMap.IMapper _mapper) : IOrderEndpointService
+public class OrderEndpointService(SK.IRepository<MO.Order> _orderRepository, SK.IRepository<MO.LoggedOrder> _logRepository, AutoMap.IMapper _mapper) : IOrderEndpointService
 {
     public async Task<CreateOrderResponse> CreateAsync(CreateOrderRequest req, CancellationToken ct)
     {
@@ -25,7 +28,7 @@ public class OrderEndpointService(SK.IRepository<MO.Order> _orderRepository, Aut
             await _orderRepository.AddAsync(order, ct);
             return _mapper.Map<CreateOrderResponse>(order);
         }
-        
+
         catch (Exception ex)
         {
             Log.Error(ex, "Unhandled");
@@ -68,11 +71,11 @@ public class OrderEndpointService(SK.IRepository<MO.Order> _orderRepository, Aut
         {
             var spec = new OrderByIdWithIncludesSpec(req.Id);
             var order = await _orderRepository.FirstOrDefaultAsync(spec, ct);
-            if (order==null||order.IsDeleted)
+            if (order == null || order.IsDeleted)
                 throw new Exception();
             return _mapper.Map<GetOrderByIdResponse>(order);
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             Log.Error(ex, "Unhandled");
             return null;
@@ -103,7 +106,7 @@ public class OrderEndpointService(SK.IRepository<MO.Order> _orderRepository, Aut
     {
         var spec = new OrderByIdWithIncludesSpec(req.Id);
         var order = await _orderRepository.FirstOrDefaultAsync(spec, ct);
-        if (order == null||order.IsDeleted)
+        if (order == null || order.IsDeleted)
             return null;
         order.OrderDate = req.OrderDate;
         order.UserId = req.UserId;
@@ -111,4 +114,22 @@ public class OrderEndpointService(SK.IRepository<MO.Order> _orderRepository, Aut
         await _orderRepository.UpdateAsync(order);
         return _mapper.Map<UpdateOrderResponse>(order);
     }
+
+    public async Task<GetOrderLogsResponse> GetOrderLogsAsync(CancellationToken ct)
+    {
+        try
+        {
+            var spec = new OrderLogsSpec();
+            var orderLogs = await _logRepository.ListAsync(spec, ct);
+            var result = new GetOrderLogsResponse();
+            result.OrderLogs = orderLogs;
+            return result;
+        }
+        catch (Exception ex)
+        {
+            Log.Error(ex, "Unhandled");
+            return null!;
+        }
+    }
+
 }

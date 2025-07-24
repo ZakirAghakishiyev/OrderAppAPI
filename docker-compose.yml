@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      SA_PASSWORD: "ZakirAghakisyev1234"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    networks:
+      - appnet
+
+  orderapp:
+    image: orderappimage   
+    depends_on:
+      - sqlserver
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=OrderApp;User Id=sa;Password=ZakirAghakisyev1234;TrustServerCertificate=true"
+    ports:
+      - "5000:8080"
+    networks:
+      - appnet
+    volumes:
+      - "C:/Users/zakir/AppData/Roaming/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro"
+
+networks:
+  appnet:

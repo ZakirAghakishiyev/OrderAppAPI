@@ -7,6 +7,7 @@ public static class DependencyInjection
     {
         services.AddScoped<AuditSaveChangesInterceptor>();
         services.AddScoped<SoftDeleteInterceptor>();
+        services.AddScoped<EntityLoggingInterceptor>();
         return services;
     }
 }

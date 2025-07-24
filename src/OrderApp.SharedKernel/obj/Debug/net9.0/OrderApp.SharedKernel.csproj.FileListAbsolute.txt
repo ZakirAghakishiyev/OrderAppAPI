@@ -24,3 +24,16 @@ D:\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKerne
 D:\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\refint\OrderApp.SharedKernel.dll
 D:\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.pdb
 D:\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\ref\OrderApp.SharedKernel.dll
+E:\Work\OrderApp\src\OrderApp.SharedKernel\bin\Debug\net9.0\OrderApp.SharedKernel.deps.json
+E:\Work\OrderApp\src\OrderApp.SharedKernel\bin\Debug\net9.0\OrderApp.SharedKernel.dll
+E:\Work\OrderApp\src\OrderApp.SharedKernel\bin\Debug\net9.0\OrderApp.SharedKernel.pdb
+E:\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.csproj.AssemblyReference.cache
+E:\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.AssemblyInfoInputs.cache
+E:\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.AssemblyInfo.cs
+E:\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.csproj.CoreCompileInputs.cache
+E:\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.sourcelink.json
+E:\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.dll
+E:\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\refint\OrderApp.SharedKernel.dll
+E:\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\OrderApp.SharedKernel.pdb
+E:\Work\OrderApp\src\OrderApp.SharedKernel\obj\Debug\net9.0\ref\OrderApp.SharedKernel.dll
