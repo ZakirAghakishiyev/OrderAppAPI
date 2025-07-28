@@ -18,9 +18,12 @@ using Microsoft.AspNetCore.Authorization;
 using OrderApp.Web.Security.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using OrderApp.Core.MailSeting;
+using OrderApp.Infrastructure.Messaging;
+using OrderApp.Infrastructure.RealTime;
+using Microsoft.AspNetCore.Http.Connections;
 
 var logger = new LoggerConfiguration()
-    .MinimumLevel.Debug() // Change to Debug or Information
+    .MinimumLevel.Debug() 
     .Enrich.FromLogContext()
     .WriteTo.Console(outputTemplate:
     "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}")
@@ -51,9 +54,10 @@ builder.Configuration
 builder.Host.ConfigureContainer<ContainerBuilder>(container =>
 {
     container.RegisterModule(new OrderAppModule());
-});       
+});
 
 builder.Services.AddAutoMapper(typeof(Automapper).Assembly);
+builder.Services.AddHostedService<OrderConsumer>();
 // builder.AddLoggerConfigs();
 
 builder.Services.AddControllers();
@@ -67,6 +71,7 @@ builder.Services.Configure<MySecretsOptions>(
     builder.Configuration.GetSection("MySecrets"));
 builder.Services.Configure<SmtpSettings>(
     builder.Configuration.GetSection("Smtp"));
+
 
 builder.Services.AddDbContext<AppDbContext>((sp, options) =>
 {    
@@ -84,6 +89,15 @@ var appLogger = loggerFactory.CreateLogger<Program>();
 
 builder.Services.AddOptionConfigs(builder.Configuration, appLogger, builder);
 builder.Services.AddServiceConfigs(appLogger, builder);
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+        policy.WithOrigins("http://127.0.0.1:5500")
+              .WithOrigins("https://localhost:5500") 
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials());
+});
 
 builder.Services.AddAuthentication(options =>
 {
@@ -104,7 +118,7 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.AddInfrastructure();
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddHttpContextAccessor();
 
 
@@ -125,10 +139,11 @@ builder.Services.AddFastEndpoints()
                 .AddFluentValidationAutoValidation()
                 .AddFluentValidationClientsideAdapters()
                 ;
-
+builder.Services.AddSignalR();
 
 try
 {
+    
     var app = builder.Build();
     using (var scope = app.Services.CreateScope())
     {
@@ -139,7 +154,15 @@ try
     app.UseAuthentication();
     app.UseAuthorization();
     app.MapControllers();
-    app.UseApiResponseAndExceptionWrapper(new AutoWrapperOptions
+    app.UseCors();
+    app.MapGet("/", () => "RabbitMQ Consumer is running...");
+    app.MapHub<OrderHub>("/hubs/orders", options =>
+    {
+        options.Transports =
+            HttpTransportType.WebSockets |
+            HttpTransportType.ServerSentEvents |
+            HttpTransportType.LongPolling;
+    });    app.UseApiResponseAndExceptionWrapper(new AutoWrapperOptions
     {
         ShowStatusCode = true,
         UseCustomSchema = false,

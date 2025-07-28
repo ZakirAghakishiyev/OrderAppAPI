@@ -1087,8 +1087,8 @@ D:\Work\OrderApp\src\OrderApp.Web\obj\Debug\net9.0\OrderApp.Web.pdb
 D:\Work\OrderApp\src\OrderApp.Web\obj\Debug\net9.0\OrderApp.Web.genruntimeconfig.cache
 D:\Work\OrderApp\src\OrderApp.Web\obj\Debug\net9.0\ref\OrderApp.Web.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\appsettings.json
-E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\OrderApp.Web.staticwebassets.endpoints.json
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\OrderApp.Web.staticwebassets.runtime.json
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\OrderApp.Web.staticwebassets.endpoints.json
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\OrderApp.Web.exe
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\OrderApp.Web.deps.json
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\OrderApp.Web.runtimeconfig.json
@@ -1110,7 +1110,6 @@ E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Com
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Components.Forms.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Components.Server.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Components.Web.dll
-E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Connections.Abstractions.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.CookiePolicy.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Cors.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Cryptography.Internal.dll
@@ -1128,7 +1127,6 @@ E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Hos
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Html.Abstractions.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Http.Abstractions.dll
-E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Http.Connections.Common.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Http.Connections.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Http.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Http.Extensions.dll
@@ -1174,10 +1172,8 @@ E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Ser
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Quic.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.Session.dll
-E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.SignalR.Common.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.SignalR.Core.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.SignalR.dll
-E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.StaticAssets.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.StaticFiles.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.AspNetCore.WebSockets.dll
@@ -1198,7 +1194,6 @@ E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.Extensions.Dia
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.Extensions.Diagnostics.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
-E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.Extensions.Features.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.Extensions.FileProviders.Composite.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\Microsoft.Extensions.FileProviders.Embedded.dll
@@ -1362,7 +1357,6 @@ E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\System.Text.Encoding.Ext
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\System.Text.Encodings.Web.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\System.Text.Json.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\System.Text.RegularExpressions.dll
-E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\System.Threading.Channels.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\System.Threading.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\System.Threading.Overlapped.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\refs\System.Threading.RateLimiting.dll
@@ -1418,6 +1412,13 @@ E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\MailKit.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\MediatR.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\MediatR.Contracts.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.AspNetCore.SignalR.Client.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.AspNetCore.SignalR.Common.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.Build.Locator.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.CodeAnalysis.dll
@@ -1439,6 +1440,7 @@ E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.Extensions.Caching.
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.Extensions.Features.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
@@ -1467,6 +1469,7 @@ E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\NSwag.Core.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\NSwag.Core.Yaml.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\NSwag.Generation.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\NSwag.Generation.AspNetCore.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\RabbitMQ.Client.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Serilog.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Serilog.AspNetCore.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Serilog.Extensions.Hosting.dll
@@ -1490,9 +1493,12 @@ E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\System.Configuration.Configur
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\System.Drawing.Common.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\System.Memory.Data.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\System.Net.ServerSentEvents.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\System.Net.WebSockets.WebSocketProtocol.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\System.Runtime.Caching.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\System.Security.Permissions.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\System.Threading.Channels.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\System.Windows.Extensions.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\YamlDotNet.dll
 E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll

@@ -1,0 +1,8 @@
+E:\Work\OrderApp\tests\OrderApp.UnitTests\bin\Debug\net9.0\.msCoverageSourceRootsMapping_OrderApp.UnitTests
+E:\Work\OrderApp\tests\OrderApp.UnitTests\bin\Debug\net9.0\CoverletSourceRootsMapping_OrderApp.UnitTests
+E:\Work\OrderApp\tests\OrderApp.UnitTests\obj\Debug\net9.0\OrderApp.UnitTests.csproj.AssemblyReference.cache
+E:\Work\OrderApp\tests\OrderApp.UnitTests\obj\Debug\net9.0\OrderApp.UnitTests.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\OrderApp\tests\OrderApp.UnitTests\obj\Debug\net9.0\OrderApp.UnitTests.AssemblyInfoInputs.cache
+E:\Work\OrderApp\tests\OrderApp.UnitTests\obj\Debug\net9.0\OrderApp.UnitTests.AssemblyInfo.cs
+E:\Work\OrderApp\tests\OrderApp.UnitTests\obj\Debug\net9.0\OrderApp.UnitTests.csproj.CoreCompileInputs.cache
+E:\Work\OrderApp\tests\OrderApp.UnitTests\obj\Debug\net9.0\OrderApp.UnitTests.sourcelink.json

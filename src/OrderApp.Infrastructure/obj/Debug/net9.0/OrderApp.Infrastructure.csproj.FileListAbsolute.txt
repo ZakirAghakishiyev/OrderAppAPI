@@ -42,6 +42,12 @@ D:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\refint\OrderApp.In
 D:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.Infrastructure.pdb
 D:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.Infrastructure.genruntimeconfig.cache
 D:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\ref\OrderApp.Infrastructure.dll
+E:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.Infrastructure.csproj.AssemblyReference.cache
+E:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.Infrastructure.AssemblyInfoInputs.cache
+E:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.Infrastructure.AssemblyInfo.cs
+E:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.Infrastructure.csproj.CoreCompileInputs.cache
+E:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.Infrastructure.sourcelink.json
 E:\Work\OrderApp\src\OrderApp.Infrastructure\bin\Debug\net9.0\OrderApp.Infrastructure.deps.json
 E:\Work\OrderApp\src\OrderApp.Infrastructure\bin\Debug\net9.0\OrderApp.Infrastructure.runtimeconfig.json
 E:\Work\OrderApp\src\OrderApp.Infrastructure\bin\Debug\net9.0\OrderApp.Infrastructure.dll
@@ -52,12 +58,6 @@ E:\Work\OrderApp\src\OrderApp.Infrastructure\bin\Debug\net9.0\OrderApp.UseCases.
 E:\Work\OrderApp\src\OrderApp.Infrastructure\bin\Debug\net9.0\OrderApp.Core.pdb
 E:\Work\OrderApp\src\OrderApp.Infrastructure\bin\Debug\net9.0\OrderApp.UseCases.pdb
 E:\Work\OrderApp\src\OrderApp.Infrastructure\bin\Debug\net9.0\OrderApp.SharedKernel.pdb
-E:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.Infrastructure.csproj.AssemblyReference.cache
-E:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
-E:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.Infrastructure.AssemblyInfoInputs.cache
-E:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.Infrastructure.AssemblyInfo.cs
-E:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.Infrastructure.csproj.CoreCompileInputs.cache
-E:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.Infrastructure.sourcelink.json
 E:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.2DBCC50E.Up2Date
 E:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\OrderApp.Infrastructure.dll
 E:\Work\OrderApp\src\OrderApp.Infrastructure\obj\Debug\net9.0\refint\OrderApp.Infrastructure.dll

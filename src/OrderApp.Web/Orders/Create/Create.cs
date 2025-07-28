@@ -3,8 +3,10 @@ namespace OrderApp.Web.Orders.Create;
 using AutoMapper = AutoMapper;
 using OrderApp.Endpoint.Attributes;
 using OrderApp.Core.UserAggregate;
+using OrderApp.Core.Messaging;
 
-public class Create(IOrderEndpointService _endpointService, AutoMapper.IMapper _mapper):Endpoint<CreateOrderRequest, CreateOrderResponse>
+
+public class Create(IOrderEndpointService _endpointService, AutoMapper.IMapper _mapper, IMessageProducer _publisher):Endpoint<CreateOrderRequest, CreateOrderResponse>
 {
     public override void Configure()
     {
@@ -20,6 +22,7 @@ public class Create(IOrderEndpointService _endpointService, AutoMapper.IMapper _
     {
         var order = await _endpointService.CreateAsync(request, ct);
         var response = _mapper.Map<CreateOrderResponse>(order);
+        await _publisher.SendMessageAsync(response);
         await SendAsync(response, cancellation: ct);
     }
 }

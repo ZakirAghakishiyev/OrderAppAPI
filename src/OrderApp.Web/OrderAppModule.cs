@@ -1,9 +1,13 @@
 using Autofac;
 using OrderApp.Core.MailSeting;
+using OrderApp.Core.Messaging;
+using OrderApp.Core.RealTime;
 using OrderApp.Core.Services;
 using OrderApp.Infrastructure.Auth;
 using OrderApp.Infrastructure.Data;
 using OrderApp.Infrastructure.Interceptors;
+using OrderApp.Infrastructure.Messaging;
+using OrderApp.Infrastructure.RealTime;
 using OrderApp.SharedKernel.Interfaces;
 using OrderApp.Web.Companies;
 using OrderApp.Web.Orders.Create;
@@ -43,6 +47,9 @@ public class OrderAppModule() : Module
         builder.RegisterType<AuthenticatedUserAccessor>()
             .As<IAuthenticatedUserAccessor>()
             .InstancePerLifetimeScope();
+        builder.RegisterType<RabbitMQProducer>()
+            .As<IMessageProducer>()
+            .InstancePerLifetimeScope();
 
         builder.RegisterType<HttpContextAccessor>()
                .As<IHttpContextAccessor>()
@@ -59,6 +66,12 @@ public class OrderAppModule() : Module
         builder.RegisterType<MailService>()
                 .AsSelf()
                 .InstancePerLifetimeScope();
+
+        //builder.Services.AddHostedService<OrderConsumer>();
+        builder.RegisterType<SignalRNotificationService>()
+               .As<INotificationService>()
+               .InstancePerLifetimeScope();
+
     }
 
 }
