@@ -1,0 +1,7 @@
+{
+  "OrderApp.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\Work\\OrderApp\\src\\OrderApp.Core",
+  "OrderApp.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\Work\\OrderApp\\src\\OrderApp.Infrastructure",
+  "OrderApp.SharedKernel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\Work\\OrderApp\\src\\OrderApp.SharedKernel",
+  "OrderApp.UseCases, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\Work\\OrderApp\\src\\OrderApp.UseCases",
+  "OrderApp.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\Work\\OrderApp\\src\\OrderApp.Web"
+}

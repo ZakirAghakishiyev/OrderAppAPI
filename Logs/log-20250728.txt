@@ -1,0 +1,6 @@
+2025-07-28 11:17:55.073 +04:00 [INF] Starting web host
+2025-07-28 11:17:57.005 +04:00 [INF] Options were configured
+2025-07-28 11:17:57.031 +04:00 [INF] Infrastructure services registered
+2025-07-28 11:17:57.096 +04:00 [INF] Mediatr and Email Sender services registered
+2025-07-28 11:17:58.256 +04:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-07-28 11:17:59.409 +04:00 [WRN] There are multiple relationships between 'LoggedOrder' and 'User' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'LoggedOrder' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.

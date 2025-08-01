@@ -1,44 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>SignalR Real-Time App</title>
+    <meta charset="UTF-8">
+    <title>SignalR Chat & Notification</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .box { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+        .box h3 { margin-top: 0; }
+    </style>
 </head>
 <body>
-    <div>
-        <input type="text" id="userInput" placeholder="Name" />
-        <input type="text" id="messageInput" placeholder="Message" />
-        <button onclick="sendMessage()">Send Message</button>
-        <button onclick="sendNotification()">Send Notification</button>
+
+    <div class="box">
+        <h3>Chat</h3>
+        <input type="text" id="userInput" placeholder="User name">
+        <input type="text" id="messageInput" placeholder="Message">
+        <button onclick="sendChat()">Send Chat</button>
+        <ul id="chatList"></ul>
     </div>
-    <ul id="messagesList"></ul>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
+
+    <div class="box">
+        <h3>Notification</h3>
+        <input type="text" id="orderIdInput" placeholder="Order ID">
+        <button onclick="sendNotification()">Send Notification</button>
+        <ul id="notificationList"></ul>
+    </div>
+
     <script>
-        const connection = new signalR.HubConnectionBuilder()
-            .withUrl("/realtimehub")
-            .build();
+        let chatConnection;
+        let notificationConnection;
+        let currentOrderId = null;
 
-        connection.on("ReceiveMessage", (user, message) => {
-            const li = document.createElement("li");
-            li.textContent = `${user}: ${message}`;
-            document.getElementById("messagesList").appendChild(li);
-        });
+        // Setup SignalR ChatHub connection
+        function setupChatConnection() {
+            chatConnection = new signalR.HubConnectionBuilder()
+                .withUrl("https://localhost:57679/chathub")
+                .withAutomaticReconnect()
+                .build();
 
-        connection.on("ReceiveNotification", (message) => {
-            alert(`Notification: ${message}`);
-        });
+            chatConnection.on("ReceiveMessage", (user, message) => {
+                const li = document.createElement("li");
+                li.textContent = `${user}: ${message}`;
+                document.getElementById("chatList").appendChild(li);
+            });
 
-        connection.start().catch(err => console.error(err));
+            chatConnection.start()
+                .then(() => console.log("Connected to ChatHub"))
+                .catch(err => console.error("ChatHub connection error:", err));
+        }
 
-        function sendMessage() {
+        // Send chat message to server
+        function sendChat() {
             const user = document.getElementById("userInput").value;
             const message = document.getElementById("messageInput").value;
-            connection.invoke("SendMessage", user, message).catch(err => console.error(err));
+            if (chatConnection && user && message) {
+                chatConnection.invoke("SendMessage", user, message)
+                    .catch(err => console.error("SendMessage failed:", err));
+            }
         }
 
-        function sendNotification() {
-            const message = document.getElementById("messageInput").value;
-            connection.invoke("SendNotification", message).catch(err => console.error(err));
+        // Setup SignalR NotificationHub connection
+        function setupNotificationConnection() {
+            notificationConnection = new signalR.HubConnectionBuilder()
+                .withUrl("https://localhost:57679/notificationhub")
+                .withAutomaticReconnect()
+                .build();
+
+            notificationConnection.on("ReceiveNotification", (message) => {
+                const li = document.createElement("li");
+                li.textContent = message;
+                document.getElementById("notificationList").appendChild(li);
+            });
+
+            notificationConnection.start()
+                .then(() => console.log("Connected to NotificationHub"))
+                .catch(err => console.error("NotificationHub connection failed:", err));
         }
+
+        // Send order notification
+        function sendNotification() {
+            const orderId = document.getElementById("orderIdInput").value;
+            currentOrderId = orderId;
+            if (notificationConnection && orderId) {
+                notificationConnection.invoke("SendOrderNotification", orderId)
+                    .catch(err => console.error("SendOrderNotification failed:", err));
+            }
+        }
+
+        // Initialize both connections
+        setupChatConnection();
+        setupNotificationConnection();
     </script>
 </body>
 </html>

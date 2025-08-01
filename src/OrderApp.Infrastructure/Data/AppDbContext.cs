@@ -34,7 +34,6 @@ public class AppDbContext : DbContext
         optionsBuilder.AddInterceptors(_softDeleteInterceptor);
         optionsBuilder.AddInterceptors(_entityLoggingInterceptor);
     }
-  // public DbSet<Contributor> Contributors => Set<Contributor>();
     public DbSet<Company> Companies { set; get; }
     public DbSet<Product> Products { set; get; }
     public DbSet<User> Users { set; get; }
@@ -149,10 +148,8 @@ public class AppDbContext : DbContext
   {
     int result = await base.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
 
-    // ignore events if no dispatcher provided
     if (_dispatcher == null) return result;
 
-    // dispatch events only if save was successful
     var entitiesWithEvents = ChangeTracker.Entries<HasDomainEventsBase>()
         .Select(e => e.Entity)
         .Where(e => e.DomainEvents.Any())

@@ -1636,3 +1636,10 @@ E:\Work\OrderApp\src\OrderApp.Web\obj\Debug\net9.0\OrderApp.Web.xml
 E:\Work\OrderApp\src\OrderApp.Web\obj\Debug\net9.0\OrderApp.Web.pdb
 E:\Work\OrderApp\src\OrderApp.Web\obj\Debug\net9.0\OrderApp.Web.genruntimeconfig.cache
 E:\Work\OrderApp\src\OrderApp.Web\obj\Debug\net9.0\ref\OrderApp.Web.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Microsoft.OpenApi.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Pipelines.Sockets.Unofficial.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\StackExchange.Redis.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Work\OrderApp\src\OrderApp.Web\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll

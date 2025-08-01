@@ -1,0 +1,1204 @@
+2025-08-01 09:15:01.837 +04:00 [INF] Starting web host
+2025-08-01 09:15:06.031 +04:00 [INF] Options were configured
+2025-08-01 09:15:06.335 +04:00 [INF] Infrastructure services registered
+2025-08-01 09:15:06.763 +04:00 [INF] Mediatr and Email Sender services registered
+2025-08-01 09:15:10.527 +04:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-08-01 09:15:11.555 +04:00 [WRN] There are multiple relationships between 'LoggedOrder' and 'User' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'LoggedOrder' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2025-08-01 09:15:11.808 +04:00 [DBG] The property 'PhoneNumber.ContributorId' was created in shadow state because there are no eligible CLR members with a matching name.
+2025-08-01 09:15:11.813 +04:00 [WRN] The foreign key property 'LoggedOrder.CreatedUserId1' was created in shadow state because a conflicting property with the simple name 'CreatedUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-08-01 09:15:11.817 +04:00 [WRN] The foreign key property 'LoggedOrder.DeletedUserId1' was created in shadow state because a conflicting property with the simple name 'DeletedUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-08-01 09:15:11.821 +04:00 [WRN] The foreign key property 'LoggedOrder.ModifiedUserId1' was created in shadow state because a conflicting property with the simple name 'ModifiedUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-08-01 09:15:11.825 +04:00 [WRN] The foreign key property 'UserRole.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-08-01 09:15:11.922 +04:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-01 09:15:12.051 +04:00 [DBG] Entity Framework Core 9.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2025-08-01 09:15:12.555 +04:00 [DBG] Creating DbConnection.
+2025-08-01 09:15:12.652 +04:00 [DBG] Created DbConnection. (86ms).
+2025-08-01 09:15:12.885 +04:00 [DBG] Opening connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:14.872 +04:00 [DBG] Opened connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:14.919 +04:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-08-01 09:15:14.946 +04:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (26ms).
+2025-08-01 09:15:14.952 +04:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (38ms).
+2025-08-01 09:15:14.967 +04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-01 09:15:15.289 +04:00 [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-01 09:15:15.330 +04:00 [DBG] Closing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:15.370 +04:00 [DBG] Closed connection to database 'OrderApp' on server 'DESKTOP-ZAKIR' (30ms).
+2025-08-01 09:15:15.812 +04:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2025-08-01 09:15:15.836 +04:00 [DBG] Created DbCommand for 'ExecuteScalar' (24ms).
+2025-08-01 09:15:15.985 +04:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (172ms).
+2025-08-01 09:15:15.988 +04:00 [DBG] Opening connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:15.994 +04:00 [DBG] Opened connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:16.014 +04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-08-01 09:15:16.934 +04:00 [INF] Executed DbCommand (922ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-08-01 09:15:16.951 +04:00 [DBG] Closing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:16.954 +04:00 [DBG] Closed connection to database 'OrderApp' on server 'DESKTOP-ZAKIR' (3ms).
+2025-08-01 09:15:16.966 +04:00 [DBG] 'AppDbContext' disposed.
+2025-08-01 09:15:16.972 +04:00 [DBG] Disposing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:16.978 +04:00 [DBG] Disposed connection to database '' on server '' (5ms).
+2025-08-01 09:15:17.107 +04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-08-01 09:15:17.260 +04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-08-01 09:15:17.312 +04:00 [DBG] Registered SignalR Protocol: json, implemented by Microsoft.AspNetCore.SignalR.Protocol.JsonHubProtocol.
+2025-08-01 09:15:18.373 +04:00 [INF] Registered 30 endpoints in 11,589 milliseconds.
+2025-08-01 09:15:20.734 +04:00 [DBG] Entity Framework Core 9.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2025-08-01 09:15:20.994 +04:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Any()'
+2025-08-01 09:15:21.755 +04:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<bool>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u)) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u), 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            bool? value1;
+            value1 = dataReader.IsDBNull(0) ? default(bool?) : (bool?)dataReader.GetBoolean(0);
+            return (bool)value1;
+        }, 
+        contextType: OrderApp.Infrastructure.Data.AppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-08-01 09:15:22.050 +04:00 [DBG] Creating DbConnection.
+2025-08-01 09:15:22.072 +04:00 [DBG] Created DbConnection. (22ms).
+2025-08-01 09:15:22.076 +04:00 [DBG] Opening connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:22.425 +04:00 [DBG] Opened connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:22.555 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-08-01 09:15:22.839 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (284ms).
+2025-08-01 09:15:23.082 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (527ms).
+2025-08-01 09:15:23.122 +04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-01 09:15:23.203 +04:00 [INF] Executed DbCommand (79ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-01 09:15:23.248 +04:00 [DBG] Closing data reader to 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:23.254 +04:00 [DBG] A data reader for 'OrderApp' on server 'DESKTOP-ZAKIR' is being disposed after spending 37ms reading results.
+2025-08-01 09:15:23.256 +04:00 [DBG] Closing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:23.264 +04:00 [DBG] Closed connection to database 'OrderApp' on server 'DESKTOP-ZAKIR' (7ms).
+2025-08-01 09:15:23.267 +04:00 [DBG] 'AppDbContext' disposed.
+2025-08-01 09:15:23.269 +04:00 [DBG] Disposing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:23.271 +04:00 [DBG] Disposed connection to database '' on server '' (2ms).
+2025-08-01 09:15:23.280 +04:00 [DBG] Hosting starting
+2025-08-01 09:15:23.321 +04:00 [INF] User profile is available. Using 'C:\Users\zakir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-01 09:15:23.513 +04:00 [DBG] Reading data from file 'C:\Users\zakir\AppData\Local\ASP.NET\DataProtection-Keys\key-d76fcede-8a6f-46d5-9032-13cac50778bc.xml'.
+2025-08-01 09:15:23.665 +04:00 [DBG] Found key {d76fcede-8a6f-46d5-9032-13cac50778bc}.
+2025-08-01 09:15:23.719 +04:00 [DBG] Considering key {d76fcede-8a6f-46d5-9032-13cac50778bc} with expiration date 2025-08-04 16:06:59Z as default key.
+2025-08-01 09:15:23.736 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-08-01 09:15:23.754 +04:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-08-01 09:15:23.773 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-08-01 09:15:23.804 +04:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-08-01 09:15:23.922 +04:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-08-01 09:15:23.937 +04:00 [DBG] Using key {d76fcede-8a6f-46d5-9032-13cac50778bc} as the default key.
+2025-08-01 09:15:23.954 +04:00 [DBG] Key ring with default key {d76fcede-8a6f-46d5-9032-13cac50778bc} was loaded during application startup.
+2025-08-01 09:15:24.113 +04:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-08-01 09:15:24.766 +04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-08-01 09:15:24.968 +04:00 [INF] Now listening on: https://localhost:57679
+2025-08-01 09:15:25.018 +04:00 [DBG] Loaded hosting startup assembly OrderApp.Web
+2025-08-01 09:15:25.057 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-01 09:15:25.082 +04:00 [INF] Hosting environment: Development
+2025-08-01 09:15:25.155 +04:00 [INF] Content root path: E:\Work\OrderApp\src\OrderApp.Web
+2025-08-01 09:15:25.353 +04:00 [DBG] Hosting started
+2025-08-01 09:15:29.579 +04:00 [DBG] Connection id "0HNEGN9NAP7N7" accepted.
+2025-08-01 09:15:29.879 +04:00 [DBG] Connection id "0HNEGN9NAP7N7" started.
+2025-08-01 09:15:30.236 +04:00 [DBG] Connection 0HNEGN9NAP7N7 established using the following protocol: "Tls13"
+2025-08-01 09:15:31.735 +04:00 [INF] Request starting HTTP/2 GET https://localhost:57679/ - null null
+2025-08-01 09:15:32.754 +04:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-08-01 09:15:32.780 +04:00 [DBG] 1 candidate(s) found for the request path '/'
+2025-08-01 09:15:32.806 +04:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-08-01 09:15:32.810 +04:00 [DBG] Request matched endpoint 'HTTP: GET /'
+2025-08-01 09:15:32.824 +04:00 [DBG] Request did not match any endpoints
+2025-08-01 09:15:36.217 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-01 09:15:36.217 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-01 09:15:36.604 +04:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 3848.6602ms
+2025-08-01 09:15:36.758 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-08-01 09:15:37.614 +04:00 [INF] Executing endpoint 'HTTP: GET /'
+2025-08-01 09:15:37.649 +04:00 [INF] Executed endpoint 'HTTP: GET /'
+2025-08-01 09:15:37.819 +04:00 [INF] Source:[::1] Request: GET https localhost:57679/   Responded with [200] in 1028ms
+2025-08-01 09:15:37.918 +04:00 [INF] Request finished HTTP/2 GET https://localhost:57679/ - 200 114 application/json 6189.2009ms
+2025-08-01 09:15:38.428 +04:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/swagger-ui.css - null null
+2025-08-01 09:15:38.437 +04:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.css - null null
+2025-08-01 09:15:38.464 +04:00 [DBG] No candidates found for the request path '/swagger/swagger-ui.css'
+2025-08-01 09:15:38.470 +04:00 [DBG] No candidates found for the request path '/swagger/index.css'
+2025-08-01 09:15:38.477 +04:00 [DBG] Request did not match any endpoints
+2025-08-01 09:15:38.482 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-01 09:15:38.474 +04:00 [DBG] Request did not match any endpoints
+2025-08-01 09:15:38.517 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-01 09:15:38.517 +04:00 [INF] Sending file. Request path: '/index.css'. Physical path: 'N/A'
+2025-08-01 09:15:38.526 +04:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.css - 200 218 text/css 88.7935ms
+2025-08-01 09:15:38.552 +04:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2025-08-01 09:15:38.567 +04:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/swagger-ui.css - 200 152073 text/css 139.146ms
+2025-08-01 09:15:38.598 +04:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/swagger-ui-bundle.js - null null
+2025-08-01 09:15:38.612 +04:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-bundle.js'
+2025-08-01 09:15:38.614 +04:00 [DBG] Request did not match any endpoints
+2025-08-01 09:15:38.618 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-01 09:15:38.710 +04:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2025-08-01 09:15:38.713 +04:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/swagger-ui-bundle.js - 200 1452754 text/javascript 114.8332ms
+2025-08-01 09:15:39.326 +04:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/swagger-ui-standalone-preset.js - null null
+2025-08-01 09:15:39.329 +04:00 [DBG] No candidates found for the request path '/swagger/swagger-ui-standalone-preset.js'
+2025-08-01 09:15:39.331 +04:00 [DBG] Request did not match any endpoints
+2025-08-01 09:15:39.333 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-01 09:15:39.348 +04:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2025-08-01 09:15:39.350 +04:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/swagger-ui-standalone-preset.js - 200 230294 text/javascript 23.7326ms
+2025-08-01 09:15:41.368 +04:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2025-08-01 09:15:41.378 +04:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-08-01 09:15:41.381 +04:00 [DBG] Request did not match any endpoints
+2025-08-01 09:15:41.449 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-01 09:15:41.635 +04:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-08-01 09:15:41.725 +04:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-08-01 09:15:43.627 +04:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 2259.4397ms
+2025-08-01 09:15:57.331 +04:00 [INF] Request starting HTTP/2 POST https://localhost:57679/auth/login - application/json 50
+2025-08-01 09:15:57.341 +04:00 [DBG] 1 candidate(s) found for the request path '/auth/login'
+2025-08-01 09:15:57.344 +04:00 [DBG] Request matched endpoint 'HTTP: POST /auth/login'
+2025-08-01 09:15:57.350 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-01 09:15:57.357 +04:00 [DBG] The request has an origin header: 'https://localhost:57679'.
+2025-08-01 09:15:57.361 +04:00 [INF] CORS policy execution failed.
+2025-08-01 09:15:57.363 +04:00 [INF] Request origin https://localhost:57679 does not have permission to access the resource.
+2025-08-01 09:15:57.381 +04:00 [DBG] Connection id "0HNEGN9NAP7N7", Request id "0HNEGN9NAP7N7:0000000F": started reading request body.
+2025-08-01 09:15:57.384 +04:00 [DBG] Connection id "0HNEGN9NAP7N7", Request id "0HNEGN9NAP7N7:0000000F": done reading request body.
+2025-08-01 09:15:57.389 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-08-01 09:15:57.391 +04:00 [INF] Executing endpoint 'HTTP: POST /auth/login'
+2025-08-01 09:15:57.924 +04:00 [DBG] Entity Framework Core 9.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2025-08-01 09:15:58.009 +04:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Where(u => u.Name == __name_0 && u.Password == __password_1)
+    .Include(u => u.Roles)
+    .ThenInclude(r => r.Role)
+    .FirstOrDefault()'
+2025-08-01 09:15:58.056 +04:00 [DBG] Including navigation: 'User.Roles'.
+2025-08-01 09:15:58.066 +04:00 [DBG] Including navigation: 'UserRole.Role'.
+2025-08-01 09:15:58.426 +04:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<User>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.Email (string) Required, 1], [Property: User.Name (string) Required, 2], [Property: User.Password (string) Required, 3] }
+                1 -> 0
+                2 -> Dictionary<IProperty, int> { [Property: UserRole.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 4], [Property: UserRole.RoleId (int) Required FK Index, 5], [Property: UserRole.UserId (int) Required FK Index, 6], [Property: UserRole.UserId1 (no field, int?) Shadow FK Index, 7] }
+                3 -> Dictionary<IProperty, int> { [Property: Role.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 8], [Property: Role.Name (string) Required, 9] }
+                4 -> 4
+                5 -> 8
+            SELECT u1.Id, u1.Email, u1.Name, u1.Password, s.Id, s.RoleId, s.UserId, s.UserId1, s.Id0, s.Name
+            FROM 
+            (
+                SELECT TOP(1) u.Id, u.Email, u.Name, u.Password
+                FROM Users AS u
+                WHERE (u.Name == @__name_0) && (u.Password == @__password_1)
+            ) AS u1
+            LEFT JOIN 
+            (
+                SELECT u0.Id, u0.RoleId, u0.UserId, u0.UserId1, r.Id AS Id0, r.Name
+                FROM UserRoles AS u0
+                INNER JOIN Roles AS r ON u0.RoleId == r.Id
+            ) AS s ON u1.Id == s.UserId
+            ORDER BY u1.Id ASC, s.Id ASC) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.Email (string) Required, 1], [Property: User.Name (string) Required, 2], [Property: User.Password (string) Required, 3] }
+                1 -> 0
+                2 -> Dictionary<IProperty, int> { [Property: UserRole.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 4], [Property: UserRole.RoleId (int) Required FK Index, 5], [Property: UserRole.UserId (int) Required FK Index, 6], [Property: UserRole.UserId1 (no field, int?) Shadow FK Index, 7] }
+                3 -> Dictionary<IProperty, int> { [Property: Role.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 8], [Property: Role.Name (string) Required, 9] }
+                4 -> 4
+                5 -> 8
+            SELECT u1.Id, u1.Email, u1.Name, u1.Password, s.Id, s.RoleId, s.UserId, s.UserId1, s.Id0, s.Name
+            FROM 
+            (
+                SELECT TOP(1) u.Id, u.Email, u.Name, u.Password
+                FROM Users AS u
+                WHERE (u.Name == @__name_0) && (u.Password == @__password_1)
+            ) AS u1
+            LEFT JOIN 
+            (
+                SELECT u0.Id, u0.RoleId, u0.UserId, u0.UserId1, r.Id AS Id0, r.Name
+                FROM UserRoles AS u0
+                INNER JOIN Roles AS r ON u0.RoleId == r.Id
+            ) AS s ON u1.Id == s.UserId
+            ORDER BY u1.Id ASC, s.Id ASC, 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            resultContext.Values == null ? 
+            {
+                User entity;
+                entity = 
+                {
+                    MaterializationContext materializationContext1;
+                    IEntityType entityType1;
+                    User instance1;
+                    InternalEntityEntry entry1;
+                    bool hasNullKey1;
+                    materializationContext1 = new MaterializationContext(
+                        [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                        queryContext.Context
+                    );
+                    instance1 = default(User);
+                    entry1 = queryContext.TryGetEntry(
+                        key: [LIFTABLE Constant: Key: User.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User").FindPrimaryKey()], 
+                        keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                        throwOnNullKey: True, 
+                        hasNullKey: hasNullKey1);
+                    !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                    {
+                        entityType1 = entry1.EntityType;
+                        return instance1 = (User)entry1.Entity;
+                    } : 
+                    {
+                        ISnapshot shadowSnapshot1;
+                        shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                        entityType1 = [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User")];
+                        instance1 = switch (entityType1)
+                        {
+                            case [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User")]: 
+                                {
+                                    return 
+                                    {
+                                        User instance;
+                                        instance = new User();
+                                        instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                        instance.<Email>k__BackingField = dataReader.GetString(1);
+                                        instance.<Name>k__BackingField = dataReader.GetString(2);
+                                        instance.<Password>k__BackingField = dataReader.GetString(3);
+                                        (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                            context: materializationContext1.Context, 
+                                            entity: instance, 
+                                            queryTrackingBehavior: TrackAll, 
+                                            structuralType: [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User")]) : default(void);
+                                        return instance;
+                                    }}
+                            default: 
+                                default(User)
+                        }
+                        ;
+                        entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                            entityType: entityType1, 
+                            entity: instance1, 
+                            snapshot: shadowSnapshot1);
+                        return instance1;
+                    } : default(void);
+                    return instance1;
+                };
+                resultContext.Values = new object[]{ entity };
+                ShaperProcessingExpressionVisitor.InitializeIncludeCollection<User, User>(
+                    collectionId: 0, 
+                    queryContext: queryContext, 
+                    dbDataReader: dataReader, 
+                    resultCoordinator: resultCoordinator, 
+                    entity: (User)(resultContext.Values[0]), 
+                    parentIdentifier: (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }, 
+                    outerIdentifier: (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }, 
+                    navigation: [LIFTABLE Constant: Navigation: User.Roles (List<UserRole>) Collection ToDependent UserRole | Resolver: namelessParameter{3} => namelessParameter{3}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User").FindNavigation("Roles")], 
+                    clrCollectionAccessor: [LIFTABLE Constant: ClrICollectionAccessor<User, List<UserRole>, UserRole> | Resolver: namelessParameter{4} => namelessParameter{4}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User").FindNavigation("Roles").GetCollectionAccessor()], 
+                    trackingQuery: True, 
+                    setLoaded: True);
+            } : default(void);
+            ShaperProcessingExpressionVisitor.PopulateIncludeCollection<User, UserRole>(
+                collectionId: 0, 
+                queryContext: queryContext, 
+                dbDataReader: dataReader, 
+                resultCoordinator: resultCoordinator, 
+                parentIdentifier: (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }, 
+                outerIdentifier: (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }, 
+                selfIdentifier: (queryContext, dataReader) => new object[]
+                { 
+                    (object)dataReader.IsDBNull(4) ? default(int?) : (int?)dataReader.GetInt32(4), 
+                    (object)dataReader.IsDBNull(8) ? default(int?) : (int?)dataReader.GetInt32(8) 
+                }, 
+                parentIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && (int)left == (int)right }], 
+                outerIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && (int)left == (int)right }], 
+                selfIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool>, Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]
+                { 
+                    (left, right) => left == null ? right == null : right != null && (int)left == (int)right, 
+                    (left, right) => left == null ? right == null : right != null && (int)left == (int)right 
+                }], 
+                innerShaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+                {
+                    UserRole entity;
+                    Role entity;
+                    entity = 
+                    {
+                        MaterializationContext materializationContext2;
+                        IEntityType entityType2;
+                        UserRole instance2;
+                        InternalEntityEntry entry2;
+                        bool hasNullKey2;
+                        materializationContext2 = new MaterializationContext(
+                            [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                            queryContext.Context
+                        );
+                        instance2 = default(UserRole);
+                        entry2 = queryContext.TryGetEntry(
+                            key: [LIFTABLE Constant: Key: UserRole.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.UserRole").FindPrimaryKey()], 
+                            keyValues: new object[]{ dataReader.IsDBNull(4) ? default(object) : (object)dataReader.GetInt32(4) }, 
+                            throwOnNullKey: False, 
+                            hasNullKey: hasNullKey2);
+                        !(hasNullKey2) ? entry2 != default(InternalEntityEntry) ? 
+                        {
+                            entityType2 = entry2.EntityType;
+                            return instance2 = (UserRole)entry2.Entity;
+                        } : 
+                        {
+                            ISnapshot shadowSnapshot2;
+                            shadowSnapshot2 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                            entityType2 = [LIFTABLE Constant: EntityType: UserRole | Resolver: namelessParameter{5} => namelessParameter{5}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.UserRole")];
+                            instance2 = switch (entityType2)
+                            {
+                                case [LIFTABLE Constant: EntityType: UserRole | Resolver: namelessParameter{6} => namelessParameter{6}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.UserRole")]: 
+                                    {
+                                        shadowSnapshot2 = (ISnapshot)new Snapshot<int?>(dataReader.IsDBNull(7) ? default(int?) : (int?)dataReader.GetInt32(7));
+                                        return 
+                                        {
+                                            UserRole instance;
+                                            instance = new UserRole();
+                                            instance.<Id>k__BackingField = dataReader.IsDBNull(4) ? default(int) : dataReader.GetInt32(4);
+                                            instance.<RoleId>k__BackingField = dataReader.IsDBNull(5) ? default(int) : dataReader.GetInt32(5);
+                                            instance.<UserId>k__BackingField = dataReader.IsDBNull(6) ? default(int) : dataReader.GetInt32(6);
+                                            (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                                context: materializationContext2.Context, 
+                                                entity: instance, 
+                                                queryTrackingBehavior: TrackAll, 
+                                                structuralType: [LIFTABLE Constant: EntityType: UserRole | Resolver: namelessParameter{7} => namelessParameter{7}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.UserRole")]) : default(void);
+                                            return instance;
+                                        }}
+                                default: 
+                                    default(UserRole)
+                            }
+                            ;
+                            entry2 = entityType2 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                                entityType: entityType2, 
+                                entity: instance2, 
+                                snapshot: shadowSnapshot2);
+                            return instance2;
+                        } : default(void);
+                        return instance2;
+                    };
+                    entity = 
+                    {
+                        MaterializationContext materializationContext3;
+                        IEntityType entityType3;
+                        Role instance3;
+                        InternalEntityEntry entry3;
+                        bool hasNullKey3;
+                        materializationContext3 = new MaterializationContext(
+                            [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                            queryContext.Context
+                        );
+                        instance3 = default(Role);
+                        entry3 = queryContext.TryGetEntry(
+                            key: [LIFTABLE Constant: Key: Role.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.Role").FindPrimaryKey()], 
+                            keyValues: new object[]{ dataReader.IsDBNull(8) ? default(object) : (object)dataReader.GetInt32(8) }, 
+                            throwOnNullKey: False, 
+                            hasNullKey: hasNullKey3);
+                        !(hasNullKey3) ? entry3 != default(InternalEntityEntry) ? 
+                        {
+                            entityType3 = entry3.EntityType;
+                            return instance3 = (Role)entry3.Entity;
+                        } : 
+                        {
+                            ISnapshot shadowSnapshot3;
+                            shadowSnapshot3 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                            entityType3 = [LIFTABLE Constant: EntityType: Role | Resolver: namelessParameter{8} => namelessParameter{8}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.Role")];
+                            instance3 = switch (entityType3)
+                            {
+                                case [LIFTABLE Constant: EntityType: Role | Resolver: namelessParameter{9} => namelessParameter{9}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.Role")]: 
+                                    {
+                                        return 
+                                        {
+                                            Role instance;
+                                            instance = new Role();
+                                            instance.<Id>k__BackingField = dataReader.IsDBNull(8) ? default(int) : dataReader.GetInt32(8);
+                                            instance.<Name>k__BackingField = dataReader.IsDBNull(9) ? default(string) : dataReader.GetString(9);
+                                            (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                                context: materializationContext3.Context, 
+                                                entity: instance, 
+                                                queryTrackingBehavior: TrackAll, 
+                                                structuralType: [LIFTABLE Constant: EntityType: Role | Resolver: namelessParameter{10} => namelessParameter{10}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.Role")]) : default(void);
+                                            return instance;
+                                        }}
+                                default: 
+                                    default(Role)
+                            }
+                            ;
+                            entry3 = entityType3 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                                entityType: entityType3, 
+                                entity: instance3, 
+                                snapshot: shadowSnapshot3);
+                            return instance3;
+                        } : default(void);
+                        return instance3;
+                    };
+                    ShaperProcessingExpressionVisitor.IncludeReference<UserRole, UserRole, Role>(
+                        queryContext: queryContext, 
+                        entity: entity, 
+                        relatedEntity: entity, 
+                        navigation: [LIFTABLE Constant: Navigation: UserRole.Role (Role) ToPrincipal Role | Resolver: namelessParameter{11} => namelessParameter{11}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.UserRole").FindNavigation("Role")], 
+                        inverseNavigation: default(INavigation), 
+                        fixup: (namelessParameter{12}, namelessParameter{13}) => 
+                        {
+                            return namelessParameter{12}.<Role>k__BackingField = namelessParameter{13};
+                        }, 
+                        trackingQuery: True);
+                    return entity;
+                }, 
+                inverseNavigation: default(INavigationBase), 
+                fixup: (namelessParameter{14}, namelessParameter{15}) => 
+                {
+                    return [LIFTABLE Constant: ClrICollectionAccessor<User, List<UserRole>, UserRole> | Resolver: namelessParameter{16} => namelessParameter{16}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User").FindNavigation("Roles").GetCollectionAccessor()].Add(
+                        entity: namelessParameter{14}, 
+                        value: namelessParameter{15}, 
+                        forMaterialization: True);
+                }, 
+                trackingQuery: True);
+            return IsTrue(resultCoordinator.ResultReady)
+             ? (User)(resultContext.Values[0]) : default(User);
+        }, 
+        contextType: OrderApp.Infrastructure.Data.AppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-08-01 09:15:58.481 +04:00 [DBG] Creating DbConnection.
+2025-08-01 09:15:58.483 +04:00 [DBG] Created DbConnection. (2ms).
+2025-08-01 09:15:58.485 +04:00 [DBG] Opening connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:58.491 +04:00 [DBG] Opened connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:58.492 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-08-01 09:15:58.494 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2025-08-01 09:15:58.515 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (22ms).
+2025-08-01 09:15:58.521 +04:00 [DBG] Executing DbCommand [Parameters=[@__name_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[Id], [u1].[Email], [u1].[Name], [u1].[Password], [s].[Id], [s].[RoleId], [s].[UserId], [s].[UserId1], [s].[Id0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password]
+    FROM [Users] AS [u]
+    WHERE [u].[Name] = @__name_0 AND [u].[Password] = @__password_1
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[RoleId], [u0].[UserId], [u0].[UserId1], [r].[Id] AS [Id0], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [s] ON [u1].[Id] = [s].[UserId]
+ORDER BY [u1].[Id], [s].[Id]
+2025-08-01 09:15:58.895 +04:00 [INF] Executed DbCommand (379ms) [Parameters=[@__name_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[Id], [u1].[Email], [u1].[Name], [u1].[Password], [s].[Id], [s].[RoleId], [s].[UserId], [s].[UserId1], [s].[Id0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password]
+    FROM [Users] AS [u]
+    WHERE [u].[Name] = @__name_0 AND [u].[Password] = @__password_1
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[RoleId], [u0].[UserId], [u0].[UserId1], [r].[Id] AS [Id0], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [s] ON [u1].[Id] = [s].[UserId]
+ORDER BY [u1].[Id], [s].[Id]
+2025-08-01 09:15:58.991 +04:00 [DBG] Context 'AppDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-01 09:15:59.044 +04:00 [DBG] Closing data reader to 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:59.048 +04:00 [DBG] A data reader for 'OrderApp' on server 'DESKTOP-ZAKIR' is being disposed after spending 148ms reading results.
+2025-08-01 09:15:59.050 +04:00 [DBG] Closing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:59.052 +04:00 [DBG] Closed connection to database 'OrderApp' on server 'DESKTOP-ZAKIR' (1ms).
+2025-08-01 09:15:59.072 +04:00 [DBG] Opening connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:59.075 +04:00 [DBG] Opened connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:59.077 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-08-01 09:15:59.078 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2025-08-01 09:15:59.079 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (2ms).
+2025-08-01 09:15:59.080 +04:00 [DBG] Executing DbCommand [Parameters=[@__name_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[Id], [u1].[Email], [u1].[Name], [u1].[Password], [s].[Id], [s].[RoleId], [s].[UserId], [s].[UserId1], [s].[Id0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password]
+    FROM [Users] AS [u]
+    WHERE [u].[Name] = @__name_0 AND [u].[Password] = @__password_1
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[RoleId], [u0].[UserId], [u0].[UserId1], [r].[Id] AS [Id0], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [s] ON [u1].[Id] = [s].[UserId]
+ORDER BY [u1].[Id], [s].[Id]
+2025-08-01 09:15:59.088 +04:00 [INF] Executed DbCommand (8ms) [Parameters=[@__name_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[Id], [u1].[Email], [u1].[Name], [u1].[Password], [s].[Id], [s].[RoleId], [s].[UserId], [s].[UserId1], [s].[Id0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password]
+    FROM [Users] AS [u]
+    WHERE [u].[Name] = @__name_0 AND [u].[Password] = @__password_1
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[RoleId], [u0].[UserId], [u0].[UserId1], [r].[Id] AS [Id0], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [s] ON [u1].[Id] = [s].[UserId]
+ORDER BY [u1].[Id], [s].[Id]
+2025-08-01 09:15:59.097 +04:00 [DBG] Closing data reader to 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:59.098 +04:00 [DBG] A data reader for 'OrderApp' on server 'DESKTOP-ZAKIR' is being disposed after spending 3ms reading results.
+2025-08-01 09:15:59.105 +04:00 [DBG] Closing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:15:59.107 +04:00 [DBG] Closed connection to database 'OrderApp' on server 'DESKTOP-ZAKIR' (1ms).
+2025-08-01 09:15:59.968 +04:00 [INF] Executed endpoint 'HTTP: POST /auth/login'
+2025-08-01 09:16:00.035 +04:00 [INF] Source:[::1] Request: POST https localhost:57679/auth/login  {
+  "username": "string",
+  "password": "string"
+} Responded with [200] in 2664ms
+2025-08-01 09:16:00.042 +04:00 [DBG] 'AppDbContext' disposed.
+2025-08-01 09:16:00.057 +04:00 [DBG] Disposing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 09:16:00.063 +04:00 [DBG] Disposed connection to database '' on server '' (5ms).
+2025-08-01 09:16:00.077 +04:00 [INF] Request finished HTTP/2 POST https://localhost:57679/auth/login - 200 540 application/json 2745.7196ms
+2025-08-01 09:18:10.638 +04:00 [DBG] Connection id "0HNEGN9NAP7N7" is closing.
+2025-08-01 09:18:10.646 +04:00 [DBG] Connection id "0HNEGN9NAP7N7" is closed. The last processed stream ID was 15.
+2025-08-01 09:18:10.662 +04:00 [DBG] Connection id "0HNEGN9NAP7N7" received FIN.
+2025-08-01 09:18:10.690 +04:00 [DBG] Connection id "0HNEGN9NAP7N7" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-08-01 09:18:10.695 +04:00 [DBG] The connection queue processing loop for 0HNEGN9NAP7N7 completed.
+2025-08-01 09:18:10.716 +04:00 [DBG] Connection id "0HNEGN9NAP7N7" stopped.
+2025-08-01 09:18:11.820 +04:00 [INF] Application is shutting down...
+2025-08-01 09:18:11.844 +04:00 [DBG] Hosting stopping
+2025-08-01 09:18:12.045 +04:00 [DBG] Hosting stopped
+2025-08-01 10:06:20.490 +04:00 [INF] Starting web host
+2025-08-01 10:06:23.431 +04:00 [INF] Options were configured
+2025-08-01 10:06:23.646 +04:00 [INF] Infrastructure services registered
+2025-08-01 10:06:23.967 +04:00 [INF] Mediatr and Email Sender services registered
+2025-08-01 10:06:26.432 +04:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2025-08-01 10:06:27.374 +04:00 [WRN] There are multiple relationships between 'LoggedOrder' and 'User' without configured foreign key properties. This will cause Entity Framework to create shadow properties on 'LoggedOrder' with names dependent on the discovery order. Consider configuring the foreign key properties using the [ForeignKey] attribute or in 'OnModelCreating'.
+2025-08-01 10:06:27.517 +04:00 [DBG] The property 'PhoneNumber.ContributorId' was created in shadow state because there are no eligible CLR members with a matching name.
+2025-08-01 10:06:27.520 +04:00 [WRN] The foreign key property 'LoggedOrder.CreatedUserId1' was created in shadow state because a conflicting property with the simple name 'CreatedUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-08-01 10:06:27.524 +04:00 [WRN] The foreign key property 'LoggedOrder.DeletedUserId1' was created in shadow state because a conflicting property with the simple name 'DeletedUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-08-01 10:06:27.526 +04:00 [WRN] The foreign key property 'LoggedOrder.ModifiedUserId1' was created in shadow state because a conflicting property with the simple name 'ModifiedUserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-08-01 10:06:27.528 +04:00 [WRN] The foreign key property 'UserRole.UserId1' was created in shadow state because a conflicting property with the simple name 'UserId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-08-01 10:06:27.578 +04:00 [WRN] No store type was specified for the decimal property 'Price' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-01 10:06:27.679 +04:00 [DBG] Entity Framework Core 9.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2025-08-01 10:06:28.532 +04:00 [DBG] Creating DbConnection.
+2025-08-01 10:06:28.730 +04:00 [DBG] Created DbConnection. (194ms).
+2025-08-01 10:06:28.758 +04:00 [DBG] Opening connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:30.155 +04:00 [DBG] Opened connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:30.178 +04:00 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2025-08-01 10:06:30.200 +04:00 [DBG] Created DbCommand for 'ExecuteNonQuery' (21ms).
+2025-08-01 10:06:30.210 +04:00 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (39ms).
+2025-08-01 10:06:30.225 +04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-01 10:06:30.315 +04:00 [INF] Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-01 10:06:30.326 +04:00 [DBG] Closing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:30.341 +04:00 [DBG] Closed connection to database 'OrderApp' on server 'DESKTOP-ZAKIR' (8ms).
+2025-08-01 10:06:30.354 +04:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2025-08-01 10:06:30.358 +04:00 [DBG] Created DbCommand for 'ExecuteScalar' (4ms).
+2025-08-01 10:06:30.361 +04:00 [DBG] Initialized DbCommand for 'ExecuteScalar' (6ms).
+2025-08-01 10:06:30.363 +04:00 [DBG] Opening connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:30.368 +04:00 [DBG] Opened connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:30.372 +04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-08-01 10:06:30.799 +04:00 [INF] Executed DbCommand (427ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-08-01 10:06:30.803 +04:00 [DBG] Closing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:30.806 +04:00 [DBG] Closed connection to database 'OrderApp' on server 'DESKTOP-ZAKIR' (2ms).
+2025-08-01 10:06:30.815 +04:00 [DBG] 'AppDbContext' disposed.
+2025-08-01 10:06:30.820 +04:00 [DBG] Disposing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:30.827 +04:00 [DBG] Disposed connection to database '' on server '' (5ms).
+2025-08-01 10:06:30.966 +04:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-08-01 10:06:31.028 +04:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2025-08-01 10:06:31.071 +04:00 [DBG] Registered SignalR Protocol: json, implemented by Microsoft.AspNetCore.SignalR.Protocol.JsonHubProtocol.
+2025-08-01 10:06:31.724 +04:00 [INF] Registered 30 endpoints in 7,737 milliseconds.
+2025-08-01 10:06:32.773 +04:00 [DBG] Entity Framework Core 9.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2025-08-01 10:06:32.932 +04:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Any()'
+2025-08-01 10:06:33.380 +04:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleAsync<bool>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<bool>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u)) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> 0
+            SELECT EXISTS (
+                SELECT 1
+                FROM Users AS u), 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            bool? value1;
+            value1 = dataReader.IsDBNull(0) ? default(bool?) : (bool?)dataReader.GetBoolean(0);
+            return (bool)value1;
+        }, 
+        contextType: OrderApp.Infrastructure.Data.AppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-08-01 10:06:33.490 +04:00 [DBG] Creating DbConnection.
+2025-08-01 10:06:33.496 +04:00 [DBG] Created DbConnection. (5ms).
+2025-08-01 10:06:33.499 +04:00 [DBG] Opening connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:33.502 +04:00 [DBG] Opened connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:33.505 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-08-01 10:06:33.508 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2025-08-01 10:06:33.511 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (5ms).
+2025-08-01 10:06:33.514 +04:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-01 10:06:33.544 +04:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-08-01 10:06:33.567 +04:00 [DBG] Closing data reader to 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:33.573 +04:00 [DBG] A data reader for 'OrderApp' on server 'DESKTOP-ZAKIR' is being disposed after spending 22ms reading results.
+2025-08-01 10:06:33.577 +04:00 [DBG] Closing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:33.579 +04:00 [DBG] Closed connection to database 'OrderApp' on server 'DESKTOP-ZAKIR' (2ms).
+2025-08-01 10:06:33.581 +04:00 [DBG] 'AppDbContext' disposed.
+2025-08-01 10:06:33.584 +04:00 [DBG] Disposing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:33.587 +04:00 [DBG] Disposed connection to database '' on server '' (2ms).
+2025-08-01 10:06:33.595 +04:00 [DBG] Hosting starting
+2025-08-01 10:06:33.631 +04:00 [INF] User profile is available. Using 'C:\Users\zakir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-01 10:06:33.791 +04:00 [DBG] Reading data from file 'C:\Users\zakir\AppData\Local\ASP.NET\DataProtection-Keys\key-d76fcede-8a6f-46d5-9032-13cac50778bc.xml'.
+2025-08-01 10:06:33.807 +04:00 [DBG] Found key {d76fcede-8a6f-46d5-9032-13cac50778bc}.
+2025-08-01 10:06:33.832 +04:00 [DBG] Considering key {d76fcede-8a6f-46d5-9032-13cac50778bc} with expiration date 2025-08-04 16:06:59Z as default key.
+2025-08-01 10:06:33.891 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-08-01 10:06:33.901 +04:00 [DBG] Decrypting secret element using Windows DPAPI.
+2025-08-01 10:06:33.915 +04:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2025-08-01 10:06:33.924 +04:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2025-08-01 10:06:33.929 +04:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2025-08-01 10:06:33.933 +04:00 [DBG] Using key {d76fcede-8a6f-46d5-9032-13cac50778bc} as the default key.
+2025-08-01 10:06:33.936 +04:00 [DBG] Key ring with default key {d76fcede-8a6f-46d5-9032-13cac50778bc} was loaded during application startup.
+2025-08-01 10:06:34.028 +04:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2025-08-01 10:06:34.030 +04:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-08-01 10:06:34.205 +04:00 [INF] Now listening on: https://localhost:57679
+2025-08-01 10:06:34.206 +04:00 [DBG] Loaded hosting startup assembly OrderApp.Web
+2025-08-01 10:06:34.208 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-01 10:06:34.209 +04:00 [INF] Hosting environment: Development
+2025-08-01 10:06:34.211 +04:00 [INF] Content root path: E:\Work\OrderApp\src\OrderApp.Web
+2025-08-01 10:06:34.215 +04:00 [DBG] Hosting started
+2025-08-01 10:06:37.293 +04:00 [DBG] Connection id "0HNEGO69IPM8G" accepted.
+2025-08-01 10:06:37.295 +04:00 [DBG] Connection id "0HNEGO69IPM8G" started.
+2025-08-01 10:06:37.349 +04:00 [DBG] Connection 0HNEGO69IPM8G established using the following protocol: "Tls13"
+2025-08-01 10:06:37.412 +04:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/index.html - null null
+2025-08-01 10:06:37.474 +04:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2025-08-01 10:06:37.476 +04:00 [DBG] Request did not match any endpoints
+2025-08-01 10:06:39.020 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-01 10:06:39.147 +04:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/index.html - 200 null text/html; charset=utf-8 1737.3237ms
+2025-08-01 10:06:40.179 +04:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - null null
+2025-08-01 10:06:40.184 +04:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2025-08-01 10:06:40.186 +04:00 [DBG] Request did not match any endpoints
+2025-08-01 10:06:40.188 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-01 10:06:40.247 +04:00 [INF] Request starting HTTP/2 GET https://localhost:57679/swagger/favicon-32x32.png - null null
+2025-08-01 10:06:40.250 +04:00 [DBG] No candidates found for the request path '/swagger/favicon-32x32.png'
+2025-08-01 10:06:40.253 +04:00 [DBG] Request did not match any endpoints
+2025-08-01 10:06:40.255 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-01 10:06:40.267 +04:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2025-08-01 10:06:40.270 +04:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/favicon-32x32.png - 200 628 image/png 23.0731ms
+2025-08-01 10:06:40.309 +04:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-08-01 10:06:40.364 +04:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v9.0.0.0.
+2025-08-01 10:06:41.560 +04:00 [INF] Request finished HTTP/2 GET https://localhost:57679/swagger/v1/swagger.json - 200 null application/json; charset=utf-8 1381.3403ms
+2025-08-01 10:06:43.746 +04:00 [INF] Request starting HTTP/2 POST https://localhost:57679/auth/login - application/json 50
+2025-08-01 10:06:43.757 +04:00 [DBG] 1 candidate(s) found for the request path '/auth/login'
+2025-08-01 10:06:43.759 +04:00 [DBG] Request matched endpoint 'HTTP: POST /auth/login'
+2025-08-01 10:06:43.763 +04:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2025-08-01 10:06:43.768 +04:00 [DBG] The request has an origin header: 'https://localhost:57679'.
+2025-08-01 10:06:43.772 +04:00 [INF] CORS policy execution failed.
+2025-08-01 10:06:43.773 +04:00 [INF] Request origin https://localhost:57679 does not have permission to access the resource.
+2025-08-01 10:06:43.787 +04:00 [DBG] Connection id "0HNEGO69IPM8G", Request id "0HNEGO69IPM8G:00000007": started reading request body.
+2025-08-01 10:06:43.791 +04:00 [DBG] Connection id "0HNEGO69IPM8G", Request id "0HNEGO69IPM8G:00000007": done reading request body.
+2025-08-01 10:06:43.795 +04:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-08-01 10:06:43.798 +04:00 [INF] Executing endpoint 'HTTP: POST /auth/login'
+2025-08-01 10:06:43.949 +04:00 [DBG] Entity Framework Core 9.0.6 initialized 'AppDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:9.0.0' with options: EngineType=SqlServer 
+2025-08-01 10:06:43.973 +04:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .Where(u => u.Name == __name_0 && u.Password == __password_1)
+    .Include(u => u.Roles)
+    .ThenInclude(r => r.Role)
+    .FirstOrDefault()'
+2025-08-01 10:06:43.994 +04:00 [DBG] Including navigation: 'User.Roles'.
+2025-08-01 10:06:44.000 +04:00 [DBG] Including navigation: 'UserRole.Role'.
+2025-08-01 10:06:44.166 +04:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<User>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.Email (string) Required, 1], [Property: User.Name (string) Required, 2], [Property: User.Password (string) Required, 3] }
+                1 -> 0
+                2 -> Dictionary<IProperty, int> { [Property: UserRole.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 4], [Property: UserRole.RoleId (int) Required FK Index, 5], [Property: UserRole.UserId (int) Required FK Index, 6], [Property: UserRole.UserId1 (no field, int?) Shadow FK Index, 7] }
+                3 -> Dictionary<IProperty, int> { [Property: Role.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 8], [Property: Role.Name (string) Required, 9] }
+                4 -> 4
+                5 -> 8
+            SELECT u1.Id, u1.Email, u1.Name, u1.Password, s.Id, s.RoleId, s.UserId, s.UserId1, s.Id0, s.Name
+            FROM 
+            (
+                SELECT TOP(1) u.Id, u.Email, u.Name, u.Password
+                FROM Users AS u
+                WHERE (u.Name == @__name_0) && (u.Password == @__password_1)
+            ) AS u1
+            LEFT JOIN 
+            (
+                SELECT u0.Id, u0.RoleId, u0.UserId, u0.UserId1, r.Id AS Id0, r.Name
+                FROM UserRoles AS u0
+                INNER JOIN Roles AS r ON u0.RoleId == r.Id
+            ) AS s ON u1.Id == s.UserId
+            ORDER BY u1.Id ASC, s.Id ASC) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: User.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: User.Email (string) Required, 1], [Property: User.Name (string) Required, 2], [Property: User.Password (string) Required, 3] }
+                1 -> 0
+                2 -> Dictionary<IProperty, int> { [Property: UserRole.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 4], [Property: UserRole.RoleId (int) Required FK Index, 5], [Property: UserRole.UserId (int) Required FK Index, 6], [Property: UserRole.UserId1 (no field, int?) Shadow FK Index, 7] }
+                3 -> Dictionary<IProperty, int> { [Property: Role.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 8], [Property: Role.Name (string) Required, 9] }
+                4 -> 4
+                5 -> 8
+            SELECT u1.Id, u1.Email, u1.Name, u1.Password, s.Id, s.RoleId, s.UserId, s.UserId1, s.Id0, s.Name
+            FROM 
+            (
+                SELECT TOP(1) u.Id, u.Email, u.Name, u.Password
+                FROM Users AS u
+                WHERE (u.Name == @__name_0) && (u.Password == @__password_1)
+            ) AS u1
+            LEFT JOIN 
+            (
+                SELECT u0.Id, u0.RoleId, u0.UserId, u0.UserId1, r.Id AS Id0, r.Name
+                FROM UserRoles AS u0
+                INNER JOIN Roles AS r ON u0.RoleId == r.Id
+            ) AS s ON u1.Id == s.UserId
+            ORDER BY u1.Id ASC, s.Id ASC, 
+            False, 
+            new HashSet<string>(
+                new string[]{ }, 
+                StringComparer.Ordinal
+            )
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            resultContext.Values == null ? 
+            {
+                User entity;
+                entity = 
+                {
+                    MaterializationContext materializationContext1;
+                    IEntityType entityType1;
+                    User instance1;
+                    InternalEntityEntry entry1;
+                    bool hasNullKey1;
+                    materializationContext1 = new MaterializationContext(
+                        [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                        queryContext.Context
+                    );
+                    instance1 = default(User);
+                    entry1 = queryContext.TryGetEntry(
+                        key: [LIFTABLE Constant: Key: User.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User").FindPrimaryKey()], 
+                        keyValues: new object[]{ (object)dataReader.GetInt32(0) }, 
+                        throwOnNullKey: True, 
+                        hasNullKey: hasNullKey1);
+                    !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                    {
+                        entityType1 = entry1.EntityType;
+                        return instance1 = (User)entry1.Entity;
+                    } : 
+                    {
+                        ISnapshot shadowSnapshot1;
+                        shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                        entityType1 = [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User")];
+                        instance1 = switch (entityType1)
+                        {
+                            case [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User")]: 
+                                {
+                                    return 
+                                    {
+                                        User instance;
+                                        instance = new User();
+                                        instance.<Id>k__BackingField = dataReader.GetInt32(0);
+                                        instance.<Email>k__BackingField = dataReader.GetString(1);
+                                        instance.<Name>k__BackingField = dataReader.GetString(2);
+                                        instance.<Password>k__BackingField = dataReader.GetString(3);
+                                        (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                            context: materializationContext1.Context, 
+                                            entity: instance, 
+                                            queryTrackingBehavior: TrackAll, 
+                                            structuralType: [LIFTABLE Constant: EntityType: User | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User")]) : default(void);
+                                        return instance;
+                                    }}
+                            default: 
+                                default(User)
+                        }
+                        ;
+                        entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                            entityType: entityType1, 
+                            entity: instance1, 
+                            snapshot: shadowSnapshot1);
+                        return instance1;
+                    } : default(void);
+                    return instance1;
+                };
+                resultContext.Values = new object[]{ entity };
+                ShaperProcessingExpressionVisitor.InitializeIncludeCollection<User, User>(
+                    collectionId: 0, 
+                    queryContext: queryContext, 
+                    dbDataReader: dataReader, 
+                    resultCoordinator: resultCoordinator, 
+                    entity: (User)(resultContext.Values[0]), 
+                    parentIdentifier: (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }, 
+                    outerIdentifier: (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }, 
+                    navigation: [LIFTABLE Constant: Navigation: User.Roles (List<UserRole>) Collection ToDependent UserRole | Resolver: namelessParameter{3} => namelessParameter{3}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User").FindNavigation("Roles")], 
+                    clrCollectionAccessor: [LIFTABLE Constant: ClrICollectionAccessor<User, List<UserRole>, UserRole> | Resolver: namelessParameter{4} => namelessParameter{4}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User").FindNavigation("Roles").GetCollectionAccessor()], 
+                    trackingQuery: True, 
+                    setLoaded: True);
+            } : default(void);
+            ShaperProcessingExpressionVisitor.PopulateIncludeCollection<User, UserRole>(
+                collectionId: 0, 
+                queryContext: queryContext, 
+                dbDataReader: dataReader, 
+                resultCoordinator: resultCoordinator, 
+                parentIdentifier: (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }, 
+                outerIdentifier: (queryContext, dataReader) => new object[]{ (object)(int?)dataReader.GetInt32(0) }, 
+                selfIdentifier: (queryContext, dataReader) => new object[]
+                { 
+                    (object)dataReader.IsDBNull(4) ? default(int?) : (int?)dataReader.GetInt32(4), 
+                    (object)dataReader.IsDBNull(8) ? default(int?) : (int?)dataReader.GetInt32(8) 
+                }, 
+                parentIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && (int)left == (int)right }], 
+                outerIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]{ (left, right) => left == null ? right == null : right != null && (int)left == (int)right }], 
+                selfIdentifierValueComparers: [LIFTABLE Constant: Func<object, object, bool>[] { Func<object, object, bool>, Func<object, object, bool> } | Resolver: _ => new Func<object, object, bool>[]
+                { 
+                    (left, right) => left == null ? right == null : right != null && (int)left == (int)right, 
+                    (left, right) => left == null ? right == null : right != null && (int)left == (int)right 
+                }], 
+                innerShaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+                {
+                    UserRole entity;
+                    Role entity;
+                    entity = 
+                    {
+                        MaterializationContext materializationContext2;
+                        IEntityType entityType2;
+                        UserRole instance2;
+                        InternalEntityEntry entry2;
+                        bool hasNullKey2;
+                        materializationContext2 = new MaterializationContext(
+                            [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                            queryContext.Context
+                        );
+                        instance2 = default(UserRole);
+                        entry2 = queryContext.TryGetEntry(
+                            key: [LIFTABLE Constant: Key: UserRole.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.UserRole").FindPrimaryKey()], 
+                            keyValues: new object[]{ dataReader.IsDBNull(4) ? default(object) : (object)dataReader.GetInt32(4) }, 
+                            throwOnNullKey: False, 
+                            hasNullKey: hasNullKey2);
+                        !(hasNullKey2) ? entry2 != default(InternalEntityEntry) ? 
+                        {
+                            entityType2 = entry2.EntityType;
+                            return instance2 = (UserRole)entry2.Entity;
+                        } : 
+                        {
+                            ISnapshot shadowSnapshot2;
+                            shadowSnapshot2 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                            entityType2 = [LIFTABLE Constant: EntityType: UserRole | Resolver: namelessParameter{5} => namelessParameter{5}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.UserRole")];
+                            instance2 = switch (entityType2)
+                            {
+                                case [LIFTABLE Constant: EntityType: UserRole | Resolver: namelessParameter{6} => namelessParameter{6}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.UserRole")]: 
+                                    {
+                                        shadowSnapshot2 = (ISnapshot)new Snapshot<int?>(dataReader.IsDBNull(7) ? default(int?) : (int?)dataReader.GetInt32(7));
+                                        return 
+                                        {
+                                            UserRole instance;
+                                            instance = new UserRole();
+                                            instance.<Id>k__BackingField = dataReader.IsDBNull(4) ? default(int) : dataReader.GetInt32(4);
+                                            instance.<RoleId>k__BackingField = dataReader.IsDBNull(5) ? default(int) : dataReader.GetInt32(5);
+                                            instance.<UserId>k__BackingField = dataReader.IsDBNull(6) ? default(int) : dataReader.GetInt32(6);
+                                            (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                                context: materializationContext2.Context, 
+                                                entity: instance, 
+                                                queryTrackingBehavior: TrackAll, 
+                                                structuralType: [LIFTABLE Constant: EntityType: UserRole | Resolver: namelessParameter{7} => namelessParameter{7}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.UserRole")]) : default(void);
+                                            return instance;
+                                        }}
+                                default: 
+                                    default(UserRole)
+                            }
+                            ;
+                            entry2 = entityType2 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                                entityType: entityType2, 
+                                entity: instance2, 
+                                snapshot: shadowSnapshot2);
+                            return instance2;
+                        } : default(void);
+                        return instance2;
+                    };
+                    entity = 
+                    {
+                        MaterializationContext materializationContext3;
+                        IEntityType entityType3;
+                        Role instance3;
+                        InternalEntityEntry entry3;
+                        bool hasNullKey3;
+                        materializationContext3 = new MaterializationContext(
+                            [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                            queryContext.Context
+                        );
+                        instance3 = default(Role);
+                        entry3 = queryContext.TryGetEntry(
+                            key: [LIFTABLE Constant: Key: Role.Id PK | Resolver: c => c.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.Role").FindPrimaryKey()], 
+                            keyValues: new object[]{ dataReader.IsDBNull(8) ? default(object) : (object)dataReader.GetInt32(8) }, 
+                            throwOnNullKey: False, 
+                            hasNullKey: hasNullKey3);
+                        !(hasNullKey3) ? entry3 != default(InternalEntityEntry) ? 
+                        {
+                            entityType3 = entry3.EntityType;
+                            return instance3 = (Role)entry3.Entity;
+                        } : 
+                        {
+                            ISnapshot shadowSnapshot3;
+                            shadowSnapshot3 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                            entityType3 = [LIFTABLE Constant: EntityType: Role | Resolver: namelessParameter{8} => namelessParameter{8}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.Role")];
+                            instance3 = switch (entityType3)
+                            {
+                                case [LIFTABLE Constant: EntityType: Role | Resolver: namelessParameter{9} => namelessParameter{9}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.Role")]: 
+                                    {
+                                        return 
+                                        {
+                                            Role instance;
+                                            instance = new Role();
+                                            instance.<Id>k__BackingField = dataReader.IsDBNull(8) ? default(int) : dataReader.GetInt32(8);
+                                            instance.<Name>k__BackingField = dataReader.IsDBNull(9) ? default(string) : dataReader.GetString(9);
+                                            (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                                context: materializationContext3.Context, 
+                                                entity: instance, 
+                                                queryTrackingBehavior: TrackAll, 
+                                                structuralType: [LIFTABLE Constant: EntityType: Role | Resolver: namelessParameter{10} => namelessParameter{10}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.Role")]) : default(void);
+                                            return instance;
+                                        }}
+                                default: 
+                                    default(Role)
+                            }
+                            ;
+                            entry3 = entityType3 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                                entityType: entityType3, 
+                                entity: instance3, 
+                                snapshot: shadowSnapshot3);
+                            return instance3;
+                        } : default(void);
+                        return instance3;
+                    };
+                    ShaperProcessingExpressionVisitor.IncludeReference<UserRole, UserRole, Role>(
+                        queryContext: queryContext, 
+                        entity: entity, 
+                        relatedEntity: entity, 
+                        navigation: [LIFTABLE Constant: Navigation: UserRole.Role (Role) ToPrincipal Role | Resolver: namelessParameter{11} => namelessParameter{11}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.UserRole").FindNavigation("Role")], 
+                        inverseNavigation: default(INavigation), 
+                        fixup: (namelessParameter{12}, namelessParameter{13}) => 
+                        {
+                            return namelessParameter{12}.<Role>k__BackingField = namelessParameter{13};
+                        }, 
+                        trackingQuery: True);
+                    return entity;
+                }, 
+                inverseNavigation: default(INavigationBase), 
+                fixup: (namelessParameter{14}, namelessParameter{15}) => 
+                {
+                    return [LIFTABLE Constant: ClrICollectionAccessor<User, List<UserRole>, UserRole> | Resolver: namelessParameter{16} => namelessParameter{16}.Dependencies.Model.FindEntityType("OrderApp.Core.UserAggregate.User").FindNavigation("Roles").GetCollectionAccessor()].Add(
+                        entity: namelessParameter{14}, 
+                        value: namelessParameter{15}, 
+                        forMaterialization: True);
+                }, 
+                trackingQuery: True);
+            return IsTrue(resultCoordinator.ResultReady)
+             ? (User)(resultContext.Values[0]) : default(User);
+        }, 
+        contextType: OrderApp.Infrastructure.Data.AppDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2025-08-01 10:06:44.209 +04:00 [DBG] Creating DbConnection.
+2025-08-01 10:06:44.210 +04:00 [DBG] Created DbConnection. (1ms).
+2025-08-01 10:06:44.211 +04:00 [DBG] Opening connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:44.213 +04:00 [DBG] Opened connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:44.215 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-08-01 10:06:44.217 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2025-08-01 10:06:44.225 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (10ms).
+2025-08-01 10:06:44.230 +04:00 [DBG] Executing DbCommand [Parameters=[@__name_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[Id], [u1].[Email], [u1].[Name], [u1].[Password], [s].[Id], [s].[RoleId], [s].[UserId], [s].[UserId1], [s].[Id0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password]
+    FROM [Users] AS [u]
+    WHERE [u].[Name] = @__name_0 AND [u].[Password] = @__password_1
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[RoleId], [u0].[UserId], [u0].[UserId1], [r].[Id] AS [Id0], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [s] ON [u1].[Id] = [s].[UserId]
+ORDER BY [u1].[Id], [s].[Id]
+2025-08-01 10:06:44.372 +04:00 [INF] Executed DbCommand (144ms) [Parameters=[@__name_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[Id], [u1].[Email], [u1].[Name], [u1].[Password], [s].[Id], [s].[RoleId], [s].[UserId], [s].[UserId1], [s].[Id0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password]
+    FROM [Users] AS [u]
+    WHERE [u].[Name] = @__name_0 AND [u].[Password] = @__password_1
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[RoleId], [u0].[UserId], [u0].[UserId1], [r].[Id] AS [Id0], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [s] ON [u1].[Id] = [s].[UserId]
+ORDER BY [u1].[Id], [s].[Id]
+2025-08-01 10:06:44.489 +04:00 [DBG] Context 'AppDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2025-08-01 10:06:44.515 +04:00 [DBG] Closing data reader to 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:44.520 +04:00 [DBG] A data reader for 'OrderApp' on server 'DESKTOP-ZAKIR' is being disposed after spending 135ms reading results.
+2025-08-01 10:06:44.523 +04:00 [DBG] Closing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:44.525 +04:00 [DBG] Closed connection to database 'OrderApp' on server 'DESKTOP-ZAKIR' (1ms).
+2025-08-01 10:06:44.533 +04:00 [DBG] Opening connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:44.537 +04:00 [DBG] Opened connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:44.538 +04:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2025-08-01 10:06:44.540 +04:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2025-08-01 10:06:44.542 +04:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2025-08-01 10:06:44.544 +04:00 [DBG] Executing DbCommand [Parameters=[@__name_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[Id], [u1].[Email], [u1].[Name], [u1].[Password], [s].[Id], [s].[RoleId], [s].[UserId], [s].[UserId1], [s].[Id0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password]
+    FROM [Users] AS [u]
+    WHERE [u].[Name] = @__name_0 AND [u].[Password] = @__password_1
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[RoleId], [u0].[UserId], [u0].[UserId1], [r].[Id] AS [Id0], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [s] ON [u1].[Id] = [s].[UserId]
+ORDER BY [u1].[Id], [s].[Id]
+2025-08-01 10:06:44.548 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__name_0='?' (Size = 4000), @__password_1='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [u1].[Id], [u1].[Email], [u1].[Name], [u1].[Password], [s].[Id], [s].[RoleId], [s].[UserId], [s].[UserId1], [s].[Id0], [s].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password]
+    FROM [Users] AS [u]
+    WHERE [u].[Name] = @__name_0 AND [u].[Password] = @__password_1
+) AS [u1]
+LEFT JOIN (
+    SELECT [u0].[Id], [u0].[RoleId], [u0].[UserId], [u0].[UserId1], [r].[Id] AS [Id0], [r].[Name]
+    FROM [UserRoles] AS [u0]
+    INNER JOIN [Roles] AS [r] ON [u0].[RoleId] = [r].[Id]
+) AS [s] ON [u1].[Id] = [s].[UserId]
+ORDER BY [u1].[Id], [s].[Id]
+2025-08-01 10:06:44.559 +04:00 [DBG] Closing data reader to 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:44.562 +04:00 [DBG] A data reader for 'OrderApp' on server 'DESKTOP-ZAKIR' is being disposed after spending 5ms reading results.
+2025-08-01 10:06:44.574 +04:00 [DBG] Closing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:44.577 +04:00 [DBG] Closed connection to database 'OrderApp' on server 'DESKTOP-ZAKIR' (3ms).
+2025-08-01 10:06:45.196 +04:00 [INF] Executed endpoint 'HTTP: POST /auth/login'
+2025-08-01 10:06:45.331 +04:00 [INF] Source:[::1] Request: POST https localhost:57679/auth/login  {
+  "username": "string",
+  "password": "string"
+} Responded with [200] in 1542ms
+2025-08-01 10:06:45.355 +04:00 [DBG] 'AppDbContext' disposed.
+2025-08-01 10:06:45.361 +04:00 [DBG] Disposing connection to database 'OrderApp' on server 'DESKTOP-ZAKIR'.
+2025-08-01 10:06:45.363 +04:00 [DBG] Disposed connection to database '' on server '' (2ms).
+2025-08-01 10:06:45.366 +04:00 [INF] Request finished HTTP/2 POST https://localhost:57679/auth/login - 200 540 application/json 1619.6643ms
+2025-08-01 10:08:57.479 +04:00 [DBG] Connection id "0HNEGO69IPM8G" is closing.
+2025-08-01 10:08:57.489 +04:00 [DBG] Connection id "0HNEGO69IPM8G" is closed. The last processed stream ID was 7.
+2025-08-01 10:08:57.502 +04:00 [DBG] Connection id "0HNEGO69IPM8G" received FIN.
+2025-08-01 10:08:57.507 +04:00 [DBG] Connection id "0HNEGO69IPM8G" sending FIN because: "The Socket transport's send loop completed gracefully."
+2025-08-01 10:08:57.515 +04:00 [DBG] The connection queue processing loop for 0HNEGO69IPM8G completed.
+2025-08-01 10:08:57.525 +04:00 [DBG] Connection id "0HNEGO69IPM8G" stopped.

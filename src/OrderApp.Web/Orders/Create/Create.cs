@@ -4,9 +4,11 @@ using AutoMapper = AutoMapper;
 using OrderApp.Endpoint.Attributes;
 using OrderApp.Core.UserAggregate;
 using OrderApp.Core.Messaging;
+using OrderApp.Web.RealTime;
+using Microsoft.AspNetCore.SignalR;
 
 
-public class Create(IOrderEndpointService _endpointService, AutoMapper.IMapper _mapper, IMessageProducer _publisher):Endpoint<CreateOrderRequest, CreateOrderResponse>
+public class Create(IOrderEndpointService _endpointService, AutoMapper.IMapper _mapper, IHubContext<NotificationHub> _hubContext):Endpoint<CreateOrderRequest, CreateOrderResponse>
 {
     public override void Configure()
     {
@@ -14,7 +16,7 @@ public class Create(IOrderEndpointService _endpointService, AutoMapper.IMapper _
         Policies(Endpoint.Constants.Policies.RoutePermissionPolicy);
         Options(opt => opt
             .WithMetadata(new PermissionAttribute(RoleEnum.Admin))
-  //          .WithMetadata(new PermissionAttribute(RoleEnum.Customer)) 
+    //          .WithMetadata(new PermissionAttribute(RoleEnum.Customer)) 
         );
     }
 
@@ -22,7 +24,7 @@ public class Create(IOrderEndpointService _endpointService, AutoMapper.IMapper _
     {
         var order = await _endpointService.CreateAsync(request, ct);
         var response = _mapper.Map<CreateOrderResponse>(order);
-        await _publisher.SendMessageAsync(response);
+        await _hubContext.Clients.All.SendAsync("ReceiveNotification", $"New order created: {order.Id}", ct);
         await SendAsync(response, cancellation: ct);
     }
 }

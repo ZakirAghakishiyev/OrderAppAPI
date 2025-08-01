@@ -11,13 +11,13 @@ namespace OrderApp.Web.Companies;
 
 public class CompanyEndpointService(SH.IRepository<Company> _companyRepository, AutoMap.IMapper _mapper) : ICompanyEndpointService
 {
-    public async Task<CreateCompanyResponse> CreateAsync(CreateCompanyRequest req, CancellationToken ct)
+    public async Task<Result<CreateCompanyResponse>> CreateAsync(CreateCompanyRequest req, CancellationToken ct)
     {
         try
         {
             var company = _mapper.Map<Company>(req);
             await _companyRepository.AddAsync(company, ct);
-            return _mapper.Map<CreateCompanyResponse>(company);
+            return Result.Success(_mapper.Map<CreateCompanyResponse>(company));
         }
         catch (Exception ex)
         {

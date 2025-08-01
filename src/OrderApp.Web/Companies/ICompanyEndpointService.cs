@@ -6,7 +6,7 @@ namespace OrderApp.Web.Companies;
 
 public interface ICompanyEndpointService
 {
-    public Task<CreateCompanyResponse> CreateAsync(CreateCompanyRequest req, CancellationToken ct);
+    public Task<Result<CreateCompanyResponse>> CreateAsync(CreateCompanyRequest req, CancellationToken ct);
     public Task<DeleteCompanyResponse?> DeleteAsync(DeleteCompanyRequest req, CancellationToken ct);
     public Task<CompanyListResponse> ListAsync(CancellationToken ct);
     public Task<GetCompanyByIdResponse?> GetByIdAsync(GetCompanyByIdRequest req, CancellationToken ct);

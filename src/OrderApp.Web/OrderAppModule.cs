@@ -1,7 +1,6 @@
 using Autofac;
 using OrderApp.Core.MailSeting;
 using OrderApp.Core.Messaging;
-using OrderApp.Core.RealTime;
 using OrderApp.Core.Services;
 using OrderApp.Infrastructure.Auth;
 using OrderApp.Infrastructure.Data;
@@ -11,6 +10,7 @@ using OrderApp.Infrastructure.RealTime;
 using OrderApp.SharedKernel.Interfaces;
 using OrderApp.Web.Companies;
 using OrderApp.Web.Orders.Create;
+using OrderApp.Web.RealTime;
 using OrderApp.Web.RegisterEndpoint;
 using OrderApp.Web.Roles;
 using OrderApp.Web.Services;
@@ -37,7 +37,9 @@ public class OrderAppModule() : Module
         builder.RegisterGeneric(typeof(EfRepository<>))
        .As(typeof(IRepository<>))
        .InstancePerLifetimeScope();
-
+        builder.RegisterType<NotificationHub>()
+            .AsSelf()
+            .InstancePerLifetimeScope();
         builder.RegisterType<AuditSaveChangesInterceptor>()
             .AsSelf()
             .InstancePerLifetimeScope();
@@ -66,11 +68,6 @@ public class OrderAppModule() : Module
         builder.RegisterType<MailService>()
                 .AsSelf()
                 .InstancePerLifetimeScope();
-
-        //builder.Services.AddHostedService<OrderConsumer>();
-        builder.RegisterType<SignalRNotificationService>()
-               .As<INotificationService>()
-               .InstancePerLifetimeScope();
 
     }
 

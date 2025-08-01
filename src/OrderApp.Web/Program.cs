@@ -21,6 +21,9 @@ using OrderApp.Core.MailSeting;
 using OrderApp.Infrastructure.Messaging;
 using OrderApp.Infrastructure.RealTime;
 using Microsoft.AspNetCore.Http.Connections;
+using OrderApp.Web.RealTime;
+using Microsoft.Extensions.Caching.Distributed;
+using OrderApp.Web.Login;
 
 var logger = new LoggerConfiguration()
     .MinimumLevel.Debug() 
@@ -61,9 +64,6 @@ builder.Services.AddHostedService<OrderConsumer>();
 // builder.AddLoggerConfigs();
 
 builder.Services.AddControllers();
-//builder.Services.AddAutoWrapper();
-// var connectionString = builder.Configuration["ConnectionStrings:DefaultConnection"];
-// var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 Guard.Against.Null(connectionString, nameof(connectionString));
 
@@ -79,6 +79,14 @@ builder.Services.AddDbContext<AppDbContext>((sp, options) =>
     var interceptor = sp.GetRequiredService<AuditSaveChangesInterceptor>();
     options.UseSqlServer(secrets.ConnectionString);
 });
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("Redis");
+    options.InstanceName = "redis-server";
+});
+builder.Services.Configure<JwtOptions>(
+    builder.Configuration.GetSection("JwtSettings"));
+
 
 
 // builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
@@ -92,7 +100,8 @@ builder.Services.AddServiceConfigs(appLogger, builder);
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
-        policy.WithOrigins("http://127.0.0.1:5500")
+        policy.AllowAnyOrigin()
+              .WithOrigins("http://127.0.0.1:5500")
               .WithOrigins("https://localhost:5500") 
               .AllowAnyHeader()
               .AllowAnyMethod()
@@ -120,6 +129,7 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddHttpContextAccessor();
+
 
 
 builder.Services.AddSingleton<IAuthorizationPolicyProvider, CustomAuthorizationPolicyProvider>();
@@ -151,22 +161,30 @@ try
         //await dbContext.Database.EnsureDeletedAsync();
         await dbContext.Database.EnsureCreatedAsync();
     }
+    app.UseRouting();
     app.UseAuthentication();
     app.UseAuthorization();
     app.MapControllers();
     app.UseCors();
-    app.MapGet("/", () => "RabbitMQ Consumer is running...");
-    app.MapHub<OrderHub>("/hubs/orders", options =>
+    app.MapHub<ChatHub>("/chathub", options =>
     {
-        options.Transports =
-            HttpTransportType.WebSockets |
-            HttpTransportType.ServerSentEvents |
-            HttpTransportType.LongPolling;
-    });    app.UseApiResponseAndExceptionWrapper(new AutoWrapperOptions
+        options.Transports = HttpTransportType.WebSockets |
+                            HttpTransportType.ServerSentEvents |
+                            HttpTransportType.LongPolling;
+    });
+    app.MapHub<NotificationHub>("/notificationhub", options =>
+    {
+        options.Transports = HttpTransportType.WebSockets |
+                            HttpTransportType.ServerSentEvents |
+                            HttpTransportType.LongPolling;
+    });
+
+    app.MapGet("/", () => "RabbitMQ Consumer is running...");
+    app.UseApiResponseAndExceptionWrapper(new AutoWrapperOptions
     {
         ShowStatusCode = true,
         UseCustomSchema = false,
-    }); ;
+    }); 
 
     await app.UseAppMiddlewareAndSeedDatabase();
 
