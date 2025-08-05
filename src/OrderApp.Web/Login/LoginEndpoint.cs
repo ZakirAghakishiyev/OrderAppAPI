@@ -40,10 +40,10 @@ public class LoginEndpoint(IRepository<User> _userRepository, JwtTokenService _t
         {
             AbsoluteExpirationRelativeToNow = _cacheExpiry
         };
-        byte[] data = JsonSerializer.SerializeToUtf8Bytes(userData);
+        //byte[] data = JsonSerializer.SerializeToUtf8Bytes(userData);
         var userDataString = userData.ToString();
         await _cache.SetStringAsync(cacheKey, userDataString!, options, ct);
-        Console.WriteLine("Cached: "+await _cache.GetStringAsync(cacheKey, ct));
+        Console.WriteLine("Cached: " + await _cache.GetStringAsync(cacheKey, ct));
         await SendAsync(new LoginResponse { Token = jwt });
     }
 }

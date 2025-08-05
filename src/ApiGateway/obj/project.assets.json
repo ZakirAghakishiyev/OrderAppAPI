@@ -1,0 +1,261 @@
+{
+  "version": 3,
+  "targets": {
+    "net9.0": {
+      "System.IO.Hashing/8.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.IO.Hashing.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.IO.Hashing.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Yarp.ReverseProxy/2.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Hashing": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Yarp.ReverseProxy.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Yarp.ReverseProxy.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "build": {
+          "buildTransitive/net8.0/Yarp.ReverseProxy.targets": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "System.IO.Hashing/8.0.0": {
+      "sha512": "ne1843evDugl0md7Fjzy6QjJrzsjh46ZKbhf8GwBXb5f/gw97J4bxMs0NQKifDuThh/f0bZ0e62NPl1jzTuRqA==",
+      "type": "package",
+      "path": "system.io.hashing/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.IO.Hashing.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.IO.Hashing.targets",
+        "lib/net462/System.IO.Hashing.dll",
+        "lib/net462/System.IO.Hashing.xml",
+        "lib/net6.0/System.IO.Hashing.dll",
+        "lib/net6.0/System.IO.Hashing.xml",
+        "lib/net7.0/System.IO.Hashing.dll",
+        "lib/net7.0/System.IO.Hashing.xml",
+        "lib/net8.0/System.IO.Hashing.dll",
+        "lib/net8.0/System.IO.Hashing.xml",
+        "lib/netstandard2.0/System.IO.Hashing.dll",
+        "lib/netstandard2.0/System.IO.Hashing.xml",
+        "system.io.hashing.8.0.0.nupkg.sha512",
+        "system.io.hashing.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Yarp.ReverseProxy/2.3.0": {
+      "sha512": "gxtkN3a+9biu9V9Zd5NaTO6VZWXAnS2mhQ0R/VXmSPoTuiQNZsakKikrKpDtKxrL5nUYzbRsHtl40WNq+ZBKKg==",
+      "type": "package",
+      "path": "yarp.reverseproxy/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ConfigurationSchema.json",
+        "README.md",
+        "buildTransitive/net6.0/Yarp.ReverseProxy.targets",
+        "buildTransitive/net7.0/Yarp.ReverseProxy.targets",
+        "buildTransitive/net8.0/Yarp.ReverseProxy.targets",
+        "icon.png",
+        "lib/net6.0/Yarp.ReverseProxy.dll",
+        "lib/net6.0/Yarp.ReverseProxy.xml",
+        "lib/net7.0/Yarp.ReverseProxy.dll",
+        "lib/net7.0/Yarp.ReverseProxy.xml",
+        "lib/net8.0/Yarp.ReverseProxy.dll",
+        "lib/net8.0/Yarp.ReverseProxy.xml",
+        "yarp.reverseproxy.2.3.0.nupkg.sha512",
+        "yarp.reverseproxy.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0": [
+      "Yarp.ReverseProxy >= 2.3.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\zakir\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "E:\\Work\\OrderApp\\src\\ApiGateway\\ApiGateway.csproj",
+      "projectName": "ApiGateway",
+      "projectPath": "E:\\Work\\OrderApp\\src\\ApiGateway\\ApiGateway.csproj",
+      "packagesPath": "C:\\Users\\zakir\\.nuget\\packages\\",
+      "outputPath": "E:\\Work\\OrderApp\\src\\ApiGateway\\obj\\",
+      "projectStyle": "PackageReference",
+      "centralPackageVersionsManagementEnabled": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "E:\\Work\\OrderApp\\NuGet.Config",
+        "C:\\Users\\zakir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0"
+      ],
+      "sources": {
+        "c:\\LocalNuget": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "allWarningsAsErrors": true,
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.100"
+    },
+    "frameworks": {
+      "net9.0": {
+        "targetAlias": "net9.0",
+        "dependencies": {
+          "Yarp.ReverseProxy": {
+            "target": "Package",
+            "version": "[2.3.0, )",
+            "versionCentrallyManaged": true
+          }
+        },
+        "centralPackageVersions": {
+          "Ardalis.GuardClauses": "5.0.0",
+          "Ardalis.HttpClientTestExtensions": "4.2.0",
+          "Ardalis.ListStartupServices": "1.1.4",
+          "Ardalis.Result": "10.1.0",
+          "Ardalis.Result.AspNetCore": "10.1.0",
+          "Ardalis.SharedKernel": "2.1.1",
+          "Ardalis.SmartEnum": "8.2.0",
+          "Ardalis.Specification": "8.0.0",
+          "Ardalis.Specification.EntityFrameworkCore": "8.0.0",
+          "AspNetCore.HealthChecks.UI.Client": "9.0.0",
+          "AspNetCore.HealthChecks.Uris": "9.0.0",
+          "Autofac.Extensions.DependencyInjection": "10.0.0",
+          "AutoMapper": "12.0.1",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
+          "AutoWrapper": "1.1.0",
+          "AutoWrapper.Core": "4.5.0",
+          "Azure.Identity": "1.13.1",
+          "Castle.Core": "5.2.1",
+          "coverlet.collector": "6.0.2",
+          "FastEndpoints": "5.32.0",
+          "FastEndpoints.ApiExplorer": "2.2.0",
+          "FastEndpoints.Swagger": "5.31.0",
+          "FastEndpoints.Swagger.Swashbuckle": "2.2.0",
+          "FluentAssertions": "8.5.0",
+          "FluentValidation.AspNetCore": "11.3.1",
+          "MailKit": "4.9.0",
+          "MediatR": "12.4.1",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "9.0.7",
+          "Microsoft.AspNetCore.Diagnostics.HealthChecks": "2.2.0",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.3.0",
+          "Microsoft.AspNetCore.Mvc.Testing": "9.0.0",
+          "Microsoft.AspNetCore.SignalR": "1.2.0",
+          "Microsoft.AspNetCore.SignalR.Client": "9.0.7",
+          "Microsoft.Build.CentralPackageVersions": "2.0.79",
+          "Microsoft.EntityFrameworkCore": "9.0.6",
+          "Microsoft.EntityFrameworkCore.Design": "9.0.0",
+          "Microsoft.EntityFrameworkCore.InMemory": "9.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "9.0.0",
+          "Microsoft.EntityFrameworkCore.Sqlite": "9.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
+          "Microsoft.EntityFrameworkCore.Tools": "9.0.0",
+          "Microsoft.Extensions.Caching.StackExchangeRedis": "9.0.7",
+          "Microsoft.Extensions.Configuration": "9.0.0",
+          "Microsoft.Extensions.Diagnostics.HealthChecks": "9.0.7",
+          "Microsoft.Extensions.Logging": "9.0.7",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "9.0.0",
+          "Microsoft.NET.Test.Sdk": "17.12.0",
+          "Moq": "4.20.72",
+          "NSubstitute": "5.3.0",
+          "OpenTelemetry": "1.12.0",
+          "OpenTelemetry.Exporter.Console": "1.12.0",
+          "OpenTelemetry.Exporter.Jaeger": "1.5.1",
+          "OpenTelemetry.Exporter.Prometheus.AspNetCore": "1.12.0-beta.1",
+          "OpenTelemetry.Extensions.Hosting": "1.12.0",
+          "OpenTelemetry.Instrumentation.AspNetCore": "1.12.0",
+          "OpenTelemetry.Instrumentation.Http": "1.12.0",
+          "OpenTelemetry.Instrumentation.Runtime": "1.12.0",
+          "RabbitMQ.Client": "7.1.2",
+          "ReportGenerator": "5.4.1",
+          "Serilog": "4.3.0",
+          "Serilog.AspNetCore": "9.0.0",
+          "Serilog.Sinks.Console": "6.0.0",
+          "Serilog.Sinks.File": "7.0.0",
+          "Shouldly": "4.3.0",
+          "SQLite": "3.13.0",
+          "StackExchange.Redis": "2.8.58",
+          "Swashbuckle.AspNetCore": "6.5.0",
+          "Swashbuckle.AspNetCore.Annotations": "6.5.0",
+          "xunit": "2.9.2",
+          "xunit.runner.visualstudio": "3.0.0-pre.49",
+          "Yarp.ReverseProxy": "2.3.0"
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

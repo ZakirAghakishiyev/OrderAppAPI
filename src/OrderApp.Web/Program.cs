@@ -24,6 +24,16 @@ using Microsoft.AspNetCore.Http.Connections;
 using OrderApp.Web.RealTime;
 using Microsoft.Extensions.Caching.Distributed;
 using OrderApp.Web.Login;
+using OpenTelemetry.Trace;
+using OpenTelemetry;
+using OpenTelemetry.Metrics;
+using OpenTelemetry.Resources;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
+using HealthChecks.Uris;
+using HealthChecks.UI.Client;
+//using OpenTelemetry.Exporter.Prometheus;
+
 
 var logger = new LoggerConfiguration()
     .MinimumLevel.Debug() 
@@ -50,6 +60,40 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 builder.Host.UseSerilog(logger);
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddOpenTelemetry()
+    .ConfigureResource(rb => rb.AddService("ObservabilityDemo"))
+    .WithTracing(tracerProvider =>
+    {
+        tracerProvider
+            .AddAspNetCoreInstrumentation()
+            .AddHttpClientInstrumentation()
+            .AddJaegerExporter(o =>
+            {
+                o.AgentHost = "localhost";
+                o.AgentPort = 6832;
+            });
+    })
+    .WithMetrics(metricsProvider =>
+    {
+        metricsProvider
+            .AddAspNetCoreInstrumentation()
+            .AddRuntimeInstrumentation()
+            .AddPrometheusExporter();
+    });
+builder.Services.AddHealthChecks()
+    // .AddSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), 
+    //               name: "SQL Server")     
+    .AddUrlGroup(new Uri("https://localhost:57679/orders"), name: "Order API") 
+    .AddUrlGroup(new Uri("https://localhost:57679/users"), name: "User API") 
+    .AddCheck("Custom_Check", () =>
+    {
+        bool healthy = true; 
+        return healthy ? 
+            HealthCheckResult.Healthy("Ok") :
+            HealthCheckResult.Unhealthy("Not Ok");
+    });
+
+
 builder.Configuration
     .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
     .AddUserSecrets<Program>()
@@ -165,6 +209,11 @@ try
     app.UseAuthentication();
     app.UseAuthorization();
     app.MapControllers();
+    app.MapPrometheusScrapingEndpoint();
+    app.MapHealthChecks("/health", new HealthCheckOptions
+    {
+        ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+    });
     app.UseCors();
     app.MapHub<ChatHub>("/chathub", options =>
     {

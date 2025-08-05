@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderApp.UseCases", "src\Or
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderApp.SharedKernel", "src\OrderApp.SharedKernel\OrderApp.SharedKernel.csproj", "{B598405E-6334-4175-BA39-C4FBAE9B295C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "src\ApiGateway\ApiGateway.csproj", "{41CF53EF-F614-4FF8-AA76-09D677E6E347}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -179,6 +181,18 @@ Global
 		{B598405E-6334-4175-BA39-C4FBAE9B295C}.Release|x64.Build.0 = Release|Any CPU
 		{B598405E-6334-4175-BA39-C4FBAE9B295C}.Release|x86.ActiveCfg = Release|Any CPU
 		{B598405E-6334-4175-BA39-C4FBAE9B295C}.Release|x86.Build.0 = Release|Any CPU
+		{41CF53EF-F614-4FF8-AA76-09D677E6E347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41CF53EF-F614-4FF8-AA76-09D677E6E347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41CF53EF-F614-4FF8-AA76-09D677E6E347}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{41CF53EF-F614-4FF8-AA76-09D677E6E347}.Debug|x64.Build.0 = Debug|Any CPU
+		{41CF53EF-F614-4FF8-AA76-09D677E6E347}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{41CF53EF-F614-4FF8-AA76-09D677E6E347}.Debug|x86.Build.0 = Debug|Any CPU
+		{41CF53EF-F614-4FF8-AA76-09D677E6E347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41CF53EF-F614-4FF8-AA76-09D677E6E347}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41CF53EF-F614-4FF8-AA76-09D677E6E347}.Release|x64.ActiveCfg = Release|Any CPU
+		{41CF53EF-F614-4FF8-AA76-09D677E6E347}.Release|x64.Build.0 = Release|Any CPU
+		{41CF53EF-F614-4FF8-AA76-09D677E6E347}.Release|x86.ActiveCfg = Release|Any CPU
+		{41CF53EF-F614-4FF8-AA76-09D677E6E347}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -192,6 +206,7 @@ Global
 		{1DC7F5A0-DDF7-4975-84EB-05F4FC1B6AB5} = {B31B4797-1D9F-4288-808C-BE9A31A98C7D}
 		{B74A78FF-B79E-4C38-A9C7-084A90990CAD} = {106AE906-5075-410A-B941-912F811848EE}
 		{B598405E-6334-4175-BA39-C4FBAE9B295C} = {106AE906-5075-410A-B941-912F811848EE}
+		{41CF53EF-F614-4FF8-AA76-09D677E6E347} = {106AE906-5075-410A-B941-912F811848EE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B0F19343-8185-4A9F-9165-0EA8544BC925}
